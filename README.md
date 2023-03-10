@@ -1,9 +1,3 @@
-
-# Título do Projeto
-
-Uma breve descrição sobre o que esse projeto faz e para quem ele é
-
-
 # Python - NDEV Blizzard API
 
 Integration developed in Python to connect the Blizzard API.
