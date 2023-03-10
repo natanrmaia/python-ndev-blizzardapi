@@ -1,4 +1,9 @@
 
+# Título do Projeto
+
+Uma breve descrição sobre o que esse projeto faz e para quem ele é
+
+
 # Python - NDEV Blizzard API
 
 Integration developed in Python to connect the Blizzard API.
@@ -28,15 +33,12 @@ For support / feedback, send email for contato@natanael.dev.br.
 | `client_id` | `string` | **Required**. Check Blizzard's documentation for more information. |
 | `client_secret` | `string` | **Obrigatório**. Check Blizzard's documentation for more information. |
 
-
-
-
-## Usage Example
-
+## Instalation
 ```python
   pip install python-ndev-blizzardapi
 ```
 
+## Usage Example
 ```python
   from blizzard_api import BlizzardAPI
   
