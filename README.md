@@ -25,7 +25,7 @@ For support / feedback, send email for contato@natanael.dev.br.
 | Parameter   | Type       | Description                           |
 | :---------- | :--------- | :---------------------------------- |
 | `client_id` | `string` | **Required**. Check Blizzard's documentation for more information. |
-| `client_secret` | `string` | **Obrigatório**. Check Blizzard's documentation for more information. |
+| `client_secret` | `string` | **Required**. Check Blizzard's documentation for more information. |
 
 ## Instalation
 ```python
@@ -34,7 +34,8 @@ For support / feedback, send email for contato@natanael.dev.br.
 
 ## Usage Example
 ```python
-  from blizzard_api import BlizzardAPI
+
+  from blizzardAPI import BlizzardAPI
   
   api = BlizzardAPI(client_id, client_secret)
   api.bnet.oauth.get_user_info("us","imagine_token_here")
