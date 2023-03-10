@@ -14,7 +14,7 @@ setup(
     long_description_content_type='text/markdown',
     url="https://github.com/natanrmaia/python-ndev-blizzardapi",
     project_urls={
-        'Documentation': 'https://python-blizzardapi.natanael.dev.br/en/latest/',
+        'Documentation': 'https://python-ndev-blizzardapi.readthedocs.io/en/latest/',
         'Source': 'https://github.com/natanrmaia/python-ndev-blizzardapi',
         'Bug Reports': 'https://github.com/natanrmaia/python-ndev-blizzardapi/issues',
     },    

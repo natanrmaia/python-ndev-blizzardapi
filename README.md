@@ -51,4 +51,4 @@ For support / feedback, send email for contato@natanael.dev.br.
 
 ## Documentation
 
-[Read the Docs](https://python-blizzardapi.natanael.dev.br/)
+[Read the Docs](https://python-ndev-blizzardapi.readthedocs.io/)
