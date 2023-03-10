@@ -1,4 +1,3 @@
-
 # Python - NDEV Blizzard API
 
 Integration developed in Python to connect the Blizzard API.
@@ -28,11 +27,12 @@ For support / feedback, send email for contato@natanael.dev.br.
 | `client_id` | `string` | **Required**. Check Blizzard's documentation for more information. |
 | `client_secret` | `string` | **Obrigatório**. Check Blizzard's documentation for more information. |
 
+## Instalation
+```python
+  pip install python-ndev-blizzardapi
+```
 
-
-
-#### Usage Example
-
+## Usage Example
 ```python
   from blizzard_api import BlizzardAPI
   
@@ -47,3 +47,7 @@ For support / feedback, send email for contato@natanael.dev.br.
 | `api.bnet.oauth.get_user_info(region, access_token)`      | `/oauth/userinfo` | User Info (param) |
 | `api.bnet.oauth.get_token_validation(region, access_token)`      | `/oauth/check_token` | Token Validation (GET) |
 
+
+## Documentation
+
+[Read the Docs](https://python-blizzardapi.natanael.dev.br/)
