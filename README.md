@@ -31,7 +31,7 @@ For support / feedback, send email for contato@natanael.dev.br.
 
 
 
-#### Usage Example
+## Usage Example
 
 ```python
   from blizzard_api import BlizzardAPI
@@ -47,3 +47,7 @@ For support / feedback, send email for contato@natanael.dev.br.
 | `api.bnet.oauth.get_user_info(region, access_token)`      | `/oauth/userinfo` | User Info (param) |
 | `api.bnet.oauth.get_token_validation(region, access_token)`      | `/oauth/check_token` | Token Validation (GET) |
 
+
+## Documentation
+
+[Read the Docs](https://python-blizzardapi.natanael.dev.br/)
