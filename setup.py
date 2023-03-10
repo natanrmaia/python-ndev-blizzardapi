@@ -2,10 +2,10 @@ from setuptools import setup, find_packages
 
 setup(
     name="python-ndev-blizzardapi",
-    version="0.0.2",
+    version="0.0.3",
     packages=find_packages(),
     install_requires=[
-        "requests",
+        "requests>=2.28.2",
     ],
     author="natanrmaia",
     author_email="contato@natanael.dev.br",

@@ -14,4 +14,3 @@ class BlizzardAPI:
         # self.wow    = WoWAPI(client_id, client_secret)
         # self.sc2    = SC2API(client_id, client_secret)
         # self.d3     = D3API(client_id, client_secret)
-        # self.wtcg   = WTCGAPI(client_id, client_secret)

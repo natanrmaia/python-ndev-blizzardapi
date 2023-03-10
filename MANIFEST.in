@@ -1,0 +1,3 @@
+include python-ndev-blizzardapi/__init__.py
+include python-ndev-blizzardapi/api.py
+include python-ndev-blizzardapi/blizzard_api.py
