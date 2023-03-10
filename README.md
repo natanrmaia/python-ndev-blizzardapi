@@ -34,6 +34,10 @@ For support / feedback, send email for contato@natanael.dev.br.
 ## Usage Example
 
 ```python
+  pip install python-ndev-blizzardapi
+```
+
+```python
   from blizzard_api import BlizzardAPI
   
   api = BlizzardAPI(client_id, client_secret)
