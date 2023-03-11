@@ -91,7 +91,15 @@ class API:
         if query_params is None:
             query_params = {}
 
+        query_params['access_token'] = self.access_token
+
+        if query_params['locale'] is None:
+            query_params['locale'] = ''
+
+        query_params['namespace'] = '{}-{}'.format(query_params['namespace'], region)
+        
         url = self.format_url(region, api)
+        
         return self.request_handler(url, region, query_params)
 
     def get_oauth(self, region, api, query_params=None):
