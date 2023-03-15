@@ -1,6 +1,5 @@
-from .wow_game import WorldOfWarcraft_Game
-from .wow_profile import WorldOfWarcraft_Profile
-
+from .game_data.game_data       import Game
+from .profile_data.profile_data import Profile
 
 class WoWAPI:
     """
@@ -12,5 +11,6 @@ class WoWAPI:
     """
 
     def __init__(self, client_id, client_secret):
-        self.game       = WorldOfWarcraft_Game(client_id, client_secret)
-        self.profile    = WorldOfWarcraft_Profile(client_id, client_secret)
+
+        self.game       = Game(client_id, client_secret)
+        self.profile    = Profile(client_id, client_secret)
