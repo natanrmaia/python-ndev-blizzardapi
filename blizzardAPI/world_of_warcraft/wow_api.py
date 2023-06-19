@@ -1,5 +1,5 @@
-from .game_data.game_data       import Game
-from .profile_data.profile_data import Profile
+from .game_data.__game_data       import Game
+from .profile_data.__profile_data import Profile
 
 class WoWAPI:
     """

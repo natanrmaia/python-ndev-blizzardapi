@@ -1,13 +1,28 @@
-from ...api import API
+from .account_profile                   import AccountProfile
+# from .character_achievements            import CharacterAchievements
+# from .character_appearance              import CharacterAppearance
+# from .character_collections             import CharacterCollections
+# from .character_encounters              import CharacterEncounters
+# from .character_equipment               import CharacterEquipment
+# from .character_hunter_pets             import CharacterHunterPets
+# from .character_media                   import CharacterMedia
+# from .character_mythic_keystone_profile import CharacterMythicKeystoneProfile
+# from .character_professions             import CharacterProfessions
+# from .character_profile                 import CharacterProfile
+# from .character_pvp                     import CharacterPvP
+# from .character_quests                  import CharacterQuests
+# from .character_reputations             import CharacterReputations
+# from .character_soulbinds               import CharacterSoulbinds
+# from .character_specializations         import CharacterSpecializations
+# from .character_statistics              import CharacterStatistics
+# from .character_titles                  import CharacterTitles
+# from .guild                             import Guild
 
-from .account_profile import AccountProfile
-
-class Profile(API):
+class Profile:
 
     def __init__(self, client_id, client_secret):
-        super().__init__(client_id, client_secret)
 
-        self.account_profile                        = AccountProfile(client_id, client_secret)
+        self.account_profile                      = AccountProfile(client_id, client_secret)
         # self.character_achievements               = CharacterAchievements(client_id, client_secret)
         # self.character_appearance                 = CharacterAppearance(client_id, client_secret)
         # self.character_collections                = CharacterCollections(client_id, client_secret)
