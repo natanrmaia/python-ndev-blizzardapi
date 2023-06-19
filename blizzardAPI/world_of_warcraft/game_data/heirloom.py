@@ -29,12 +29,12 @@ class Heirloom(API):
         }
 
         return super().get_api(region, api, query_params)
-    
+
     def get_heirloom(self, region: Optional[str], locale: Optional[str], heirloom_id: int) -> Dict:
         """
         This function retrieves information about a specific heirloom in the World of Warcraft
         game.
-        
+
         Requested API:
             /data/wow/item-class/{heirloom_id}
 
@@ -42,7 +42,7 @@ class Heirloom(API):
             region: The region of the API you want to access.
             locale: The locale of the API you want to access.
             heirloom_id: The ID of the heirloom.
-        
+
         Returns:
             A dictionary of the heirloom.
 
