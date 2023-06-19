@@ -60,7 +60,7 @@ class AzeriteEssence(API):
             'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        return super().get_api(region, api.format(azerite_essence_id), query_params)
     
     def get_azerite_essence_search(self, region: Optional[str], locale: Optional[str], allowed_specializations_id: Optional[int], order_by: Optional[str], page: Optional[int]) -> Dict:
             
@@ -130,4 +130,4 @@ class AzeriteEssence(API):
                 'locale': locale,
             }
 
-            return super().get_api(region, api, query_params)
+            return super().get_api(region, api.format(azerite_essence_id), query_params)

@@ -59,4 +59,4 @@ class ConnectedRealm(API):
             'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        return super().get_api(region, api.format(connected_realm_id), query_params)

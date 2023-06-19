@@ -60,7 +60,7 @@ class Covenant(API):
             'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        return super().get_api(region, api.format(covenant_id), query_params)
 
     def get_covenant_media(self, region: Optional[str], locale: Optional[str], covenant_id: int) -> Dict:
         """
@@ -91,7 +91,7 @@ class Covenant(API):
             'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        return super().get_api(region, api.format(covenant_id), query_params)
 
     def get_soulbind_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
         """
@@ -147,7 +147,7 @@ class Covenant(API):
             'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        return super().get_api(region, api.format(soulbind_id), query_params)
 
     def get_conduit_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
         """
@@ -202,4 +202,4 @@ class Covenant(API):
             'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        return super().get_api(region, api.format(conduit_id), query_params)
