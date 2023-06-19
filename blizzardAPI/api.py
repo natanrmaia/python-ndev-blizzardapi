@@ -1,4 +1,4 @@
-import requests
+import requests, os, importlib, inspect
 
 class API:
 
@@ -55,6 +55,7 @@ class API:
             'grant_type': 'client_credentials',
         }
         response = self.session.post(url, data=data, auth=(self.client_id, self.client_secret))
+
         return self.response_handler(response)
 
     def response_handler(self, response):
@@ -64,6 +65,7 @@ class API:
         :param response: The response object returned by the request
         :return: The response.json() method will convert the JSON string into a Python dictionary.
         """
+
         return response.json()
 
     def request_handler(self, url, region, query_params):
@@ -91,7 +93,18 @@ class API:
         if query_params is None:
             query_params = {}
 
+        query_params['access_token'] = self.access_token
+
+        if query_params['locale'] is None:
+            query_params['locale'] = ''
+
+        if region is None:
+            region = 'us'
+
+        query_params['namespace'] = '{}-{}'.format(query_params['namespace'], region)
+
         url = self.format_url(region, api)
+
         return self.request_handler(url, region, query_params)
 
     def get_oauth(self, region, api, query_params=None):
@@ -107,4 +120,5 @@ class API:
             query_params = {}
 
         url = self.format_url(region, api, 'oauth')
+
         return self.request_handler(url, region, query_params)
