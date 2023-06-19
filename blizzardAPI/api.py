@@ -1,4 +1,4 @@
-import requests
+import requests, os, importlib, inspect
 
 class API:
 
@@ -97,6 +97,9 @@ class API:
 
         if query_params['locale'] is None:
             query_params['locale'] = ''
+
+        if region is None:
+            region = 'us'
 
         query_params['namespace'] = '{}-{}'.format(query_params['namespace'], region)
 
