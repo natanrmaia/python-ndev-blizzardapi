@@ -45,6 +45,9 @@ class AzeriteEssence(API):
 
         Returns:
             A dictionary of the azerite essence.
+
+        Raises:
+            ValueError: If azerite_essence_id is not provided.
         """
 
         if azerite_essence_id is None:
@@ -77,9 +80,6 @@ class AzeriteEssence(API):
             Returns:
                 A dictionary of the azerite essence search.
             """
-
-            if allowed_specializations_id is None:
-                raise ValueError('allowed_specializations_id is required')
 
             api = '/data/wow/search/azerite-essence'
 
@@ -114,6 +114,10 @@ class AzeriteEssence(API):
 
             Returns:
                 A dictionary of the azerite essence media.
+
+            Raises:
+                ValueError: If azerite_essence_id is not provided.
+
             """
 
             if azerite_essence_id is None:

@@ -39,7 +39,7 @@ class Game:
 
         self.achievement                      = Achievement(client_id, client_secret)
         self.auction_house                    = AuctionHouse(client_id, client_secret)
-        # self.azerite_essence                  = AzeriteEssence(client_id, client_secret)
+        self.azerite_essence                  = AzeriteEssence(client_id, client_secret)
         # self.connected_realm                  = ConnectedRealm(client_id, client_secret)
         # self.covenant                         = Covenant(client_id, client_secret)
         # self.creature                         = Creature(client_id, client_secret)
