@@ -1,7 +1,7 @@
 from .achievement                   import Achievement
 from .auction_house                 import AuctionHouse
 from .azerite_essence               import AzeriteEssence
-# from .connected_realm               import ConnectedRealm
+from .connected_realm               import ConnectedRealm
 # from .covenant                      import Covenant
 # from .creature                      import Creature
 # from .guild_crest                   import GuildCrest
@@ -40,7 +40,7 @@ class Game:
         self.achievement                      = Achievement(client_id, client_secret)
         self.auction_house                    = AuctionHouse(client_id, client_secret)
         self.azerite_essence                  = AzeriteEssence(client_id, client_secret)
-        # self.connected_realm                  = ConnectedRealm(client_id, client_secret)
+        self.connected_realm                  = ConnectedRealm(client_id, client_secret)
         # self.covenant                         = Covenant(client_id, client_secret)
         # self.creature                         = Creature(client_id, client_secret)
         # self.guild_crest                      = GuildCrest(client_id, client_secret)
