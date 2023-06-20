@@ -7,7 +7,7 @@ from .creature                      import Creature
 from .guild_crest                   import GuildCrest
 from .heirloom                      import Heirloom
 from .item                          import Item
-# from .journal                       import Journal
+from .journal                       import Journal
 # from .media                         import Media
 # from .modified_crafting             import ModifiedCrafting
 # from .mount                         import Mount
@@ -47,7 +47,7 @@ class Game:
         self.guild_crest                      = GuildCrest(client_id, client_secret)
         self.heirloom                         = Heirloom(client_id, client_secret)
         self.item                             = Item(client_id, client_secret)
-        # self.journal                          = Journal(client_id, client_secret)
+        self.journal                          = Journal(client_id, client_secret)
         # self.media                            = Media(client_id, client_secret)
         # self.modified_crafting                = ModifiedCrafting(client_id, client_secret)
         # self.mount                            = Mount(client_id, client_secret)
