@@ -2,6 +2,10 @@ from typing import Dict, Optional
 from ...api import API
 
 class MythicKeystoneAffix(API):
+    
+    def __init__(self, client_id, client_secret):
+        super().__init__(client_id, client_secret)
+
     def get_mythic_keystone_affixes_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
         """
         This function will return the index of mythic keystone affixes from the API.

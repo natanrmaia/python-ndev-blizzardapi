@@ -2,6 +2,10 @@ from typing import Dict, Optional
 from ...api import API
 
 class Mount(API):
+    
+    def __init__(self, client_id, client_secret):
+        super().__init__(client_id, client_secret)
+
     def get_mounts_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
         """
         This function will return the index of mounts from the API.

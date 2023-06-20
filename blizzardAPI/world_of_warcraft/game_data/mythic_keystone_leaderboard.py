@@ -2,6 +2,10 @@ from typing import Dict, Optional
 from ...api import API
 
 class MythicKeystoneLeaderboard(API):
+    
+    def __init__(self, client_id, client_secret):
+        super().__init__(client_id, client_secret)
+
     def get_mythic_keystone_leaderboards_index(self, region: Optional[str], locale: Optional[str], connected_realm_id: int) -> Dict:
         """
         This function will return the index of mythic keystone leaderboards from the API.
