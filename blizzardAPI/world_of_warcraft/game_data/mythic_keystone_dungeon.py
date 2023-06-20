@@ -172,5 +172,3 @@ class MythicKeystoneDungeon(API):
         }
 
         return super().get_api(region, api, query_params)
-
-# END: 1a2b3c4d5e6f
