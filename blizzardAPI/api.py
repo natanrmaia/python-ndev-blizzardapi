@@ -42,6 +42,9 @@ class API:
             else:
                 url = self.oauth_url.format(region, api)
 
+        else:
+            raise ValueError('format_url must be either api or oauth')
+
         return url
 
     def get_client_token(self, region):
@@ -95,8 +98,13 @@ class API:
 
         query_params['access_token'] = self.access_token
 
-        if query_params['locale'] is None:
+        if 'locale' not in query_params:
             query_params['locale'] = ''
+        
+        elif query_params['locale'] is None:
+            query_params['locale'] = ''
+
+        
 
         if region is None:
             region = 'us'
