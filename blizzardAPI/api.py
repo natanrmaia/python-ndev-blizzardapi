@@ -84,7 +84,7 @@ class API:
 
         return self.response_handler(response)
 
-    def get_api(self, region, api, query_params=None):
+    def get_api(self, region=None, api=None, query_params=None):
         """
         It takes a region, an api, and query_params, and returns the response
 
@@ -100,14 +100,14 @@ class API:
 
         if 'locale' not in query_params:
             query_params['locale'] = ''
-        
         elif query_params['locale'] is None:
             query_params['locale'] = ''
 
-        
-
         if region is None:
             region = 'us'
+
+        if api is None:
+            raise ValueError('api cannot be None')
 
         query_params['namespace'] = '{}-{}'.format(query_params['namespace'], region)
 
