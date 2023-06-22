@@ -20,8 +20,6 @@ class TestToken:
             A boolean value indicating if the test passed.
         """
 
-        print (api_settings)
-
         token = Token(api_settings['client_id'], api_settings['client_secret'])
         result = token.get_token_index('us')
 
