@@ -20,18 +20,19 @@ from .playable_class                import PlayableClass
 from .playable_race                 import PlayableRace
 from .playable_specialization       import PlayableSpecialization
 from .power_type                    import PowerType
-# from .profession                    import Profession
-# from .pvp_season                    import PvPSeason
-# from .pvp_tier                      import PvPTier
-# from .quest                         import Quest
-# from .realm                         import Realm
-# from .region                        import Region
-# from .reputation                    import Reputation
-# from .spell                         import Spell
-# from .talent                        import Talent
-# from .tech_talent                   import TechTalent
-# from .title                         import Title
-from .wow_token                     import Token
+from .profession                    import Profession
+from .pvp_season                    import PvPSeason
+from .pvp_tier                      import PvPTier
+from .quest                         import Quest
+from .realm                         import Realm
+from .region                        import Region
+from .reputation                    import Reputation
+from .spell                         import Spell
+from .talent                        import Talent
+from .tech_talent                   import TechTalent
+from .toy                           import Toy
+from .title                         import Title
+from .token                         import Token
 
 
 class Game:
@@ -60,15 +61,16 @@ class Game:
         self.playable_race                    = PlayableRace(client_id, client_secret)
         self.playable_specialization          = PlayableSpecialization(client_id, client_secret)
         self.power_type                       = PowerType(client_id, client_secret)
-        # self.profession                       = Profession(client_id, client_secret)
-        # self.pvp_season                       = PvPSeason(client_id, client_secret)
-        # self.pvp_tier                         = PvPTier(client_id, client_secret)
-        # self.quest                            = Quest(client_id, client_secret)
-        # self.realm                            = Realm(client_id, client_secret)
-        # self.region                           = Region(client_id, client_secret)
-        # self.reputation                       = Reputation(client_id, client_secret)
-        # self.spell                            = Spell(client_id, client_secret)
-        # self.talent                           = Talent(client_id, client_secret)
-        # self.tech_talent                      = TechTalent(client_id, client_secret)
-        # self.title                            = Title(client_id, client_secret)
+        self.profession                       = Profession(client_id, client_secret)
+        self.pvp_season                       = PvPSeason(client_id, client_secret)
+        self.pvp_tier                         = PvPTier(client_id, client_secret)
+        self.quest                            = Quest(client_id, client_secret)
+        self.realm                            = Realm(client_id, client_secret)
+        self.region                           = Region(client_id, client_secret)
+        self.reputation                       = Reputation(client_id, client_secret)
+        self.spell                            = Spell(client_id, client_secret)
+        self.talent                           = Talent(client_id, client_secret)
+        self.tech_talent                      = TechTalent(client_id, client_secret)
+        self.toy                              = Toy(client_id, client_secret)
+        self.title                            = Title(client_id, client_secret)
         self.wow_token                        = Token(client_id, client_secret)
