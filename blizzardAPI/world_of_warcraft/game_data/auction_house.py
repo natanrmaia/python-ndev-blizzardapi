@@ -1,4 +1,4 @@
-from typing import Optional, Dict
+from typing import Optional, Dict, Any
 from ...api import API
 
 class AuctionHouse(API):
@@ -6,7 +6,7 @@ class AuctionHouse(API):
     def __init__(self, client_id, client_secret):
         super().__init__(client_id, client_secret)
 
-    def get_auctions(self, region: Optional[str], locale: Optional[str], connected_realm_id: int) -> Dict:
+    def get_auctions(self, connected_realm_id: int, **kwargs: Any) -> Dict:
         """
         This function will return the auctions from the API.
 
@@ -14,8 +14,6 @@ class AuctionHouse(API):
             /data/wow/connected-realm/{connected_realm_id}/auctions
 
         Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
             connected_realm_id: The ID of the connected realm.
 
         Returns:
@@ -28,35 +26,29 @@ class AuctionHouse(API):
         if connected_realm_id is None:
             raise ValueError('connected_realm_id is required')
 
-        api = '/data/wow/connected-realm/{}/auctions'
+        api = f'/data/wow/connected-realm/{connected_realm_id}/auctions'
 
         query_params = {
             'namespace': 'dynamic',
-            'locale': locale,
         }
 
-        return super().get_api(region, api.format(connected_realm_id), query_params)
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
 
-    def get_commodities(self, region: Optional[str], locale: Optional[str]) -> Dict:
+    def get_commodities(self, **kwargs: Any) -> Dict:
         """
         This function will return the commodities from the API.
 
         Requested API:
-            /data/wow/commodity/index
-
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
+            /data/wow/auctions/commodities
 
         Returns:
             A dict of the commodities.
         """
 
-        api = '/data/wow/commodity/index'
+        api = '/data/wow/auctions/commodities'
 
         query_params = {
             'namespace': 'dynamic',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
