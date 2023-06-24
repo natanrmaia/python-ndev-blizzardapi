@@ -69,6 +69,10 @@ class API:
         :return: The response.json() method will convert the JSON string into a Python dictionary.
         """
 
+        if response.status_code != 200:
+            msg = 'The response code was {0}. Check the response.json() for more information.'.format(response.status_code)
+            raise ValueError(msg)
+
         return response.json()
 
     def request_handler(self, url, region, query_params):
