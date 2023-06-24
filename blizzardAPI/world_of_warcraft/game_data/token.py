@@ -32,4 +32,4 @@ class Token(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(region=region, api=api, query_params=query_params)
+        return super().get_api(region=region, api=api, query_params=query_params, kwargs=kwargs)
