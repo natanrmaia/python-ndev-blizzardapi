@@ -84,7 +84,7 @@ class API:
 
         return self.response_handler(response)
 
-    def get_api(self, region=None, api=None, query_params=None):
+    def get_api(self, **kwargs):
         """
         It takes a region, an api, and query_params, and returns the response
 
@@ -93,6 +93,11 @@ class API:
         :param query_params: The query parameters you want to pass to the API (optional)
         :return: The response is being returned.
         """
+
+        region          = kwargs.get('region')  or 'us'
+        api             = kwargs.get('api')     or None
+        query_params    = kwargs.get('query_params') or None
+
         if query_params is None:
             query_params = {}
 
@@ -102,9 +107,6 @@ class API:
             query_params['locale'] = ''
         elif query_params['locale'] is None:
             query_params['locale'] = ''
-
-        if region is None:
-            region = 'us'
 
         if api is None:
             raise ValueError('api cannot be None')
