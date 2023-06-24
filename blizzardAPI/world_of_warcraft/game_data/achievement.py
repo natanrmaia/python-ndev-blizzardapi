@@ -1,4 +1,4 @@
-from typing import Optional, Dict
+from typing import Optional, Dict, Any
 from ...api import API
 
 
@@ -7,16 +7,12 @@ class Achievement(API):
     def __init__(self, client_id, client_secret):
         super().__init__(client_id, client_secret)
 
-    def get_achievement_categories_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
+    def get_achievement_categories_index(self, **kwargs) -> Dict:
         """
         This function will return the index of achievement categories from the API.
 
         Requested API:
             /data/wow/achievement-category/index
-
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the achievement category index.
@@ -26,12 +22,13 @@ class Achievement(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
+
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
     
-    def get_achievement_category(self, region: Optional[str], locale: Optional[str], achievement_category_id: int) -> Dict:
+    def get_achievement_category(self, achievement_category_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves information about a specific achievement category in the World of Warcraft
         game.
@@ -40,8 +37,6 @@ class Achievement(API):
             /data/wow/achievement-category/{achievement_category_id}
 
         Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
             achievement_category_id: The ID of the achievement category.
         
         Returns:
@@ -54,25 +49,22 @@ class Achievement(API):
         if achievement_category_id is None:
             raise ValueError('achievement_category_id is required')
 
-        api = '/data/wow/achievement-category/{}'
+        api = f'/data/wow/achievement-category/{achievement_category_id}'
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api.format(achievement_category_id), query_params)
+        query_params.update(kwargs)
+
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
     
-    def get_achievement_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
+    def get_achievement_index(self, **kwargs: Any) -> Dict:
         """
         This function will return the index of achievements from the API.
 
         Requested API:
             /data/wow/achievement/index
-
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
         
         Returns:
             A dictionary of the achievement index.
@@ -82,12 +74,11 @@ class Achievement(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
     
-    def get_achievement(self, region: Optional[str], locale: Optional[str], achievement_id: int) -> Dict:
+    def get_achievement(self, achievement_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves information about a specific achievement in the World of Warcraft game.
 
@@ -95,8 +86,6 @@ class Achievement(API):
             /data/wow/achievement/{achievement_id}
 
         Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
             achievement_id: The ID of the achievement.
 
         Returns:
@@ -109,16 +98,15 @@ class Achievement(API):
         if achievement_id is None:
             raise ValueError('achievement_id is required')
 
-        api = '/data/wow/achievement/{}'
+        api = f'/data/wow/achievement/{achievement_id}'
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api.format(achievement_id), query_params)
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
     
-    def get_achievement_media(self, region: Optional[str], locale: Optional[str], achievement_id: int) -> Dict:
+    def get_achievement_media(self, achievement_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves the media for a specific achievement in the API.
 
@@ -140,11 +128,10 @@ class Achievement(API):
         if achievement_id is None:
             raise ValueError('achievement_id is required')
 
-        api = '/data/wow/media/achievement/{}'
+        api = f'/data/wow/media/achievement/{achievement_id}'
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api.format(achievement_id), query_params)
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
