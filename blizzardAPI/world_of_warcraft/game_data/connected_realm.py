@@ -1,4 +1,4 @@
-from typing import Optional, Dict
+from typing import Optional, Dict, Any
 from ...api import API
 
 class ConnectedRealm(API):
@@ -6,7 +6,7 @@ class ConnectedRealm(API):
     def __init__(self, client_id, client_secret):
         super().__init__(client_id, client_secret)
 
-    def get_connected_realms_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
+    def get_connected_realms_index(self, **kwargs: Any) -> Dict:
         """
         This function will return the index of connected realms from the API.
 
@@ -25,12 +25,11 @@ class ConnectedRealm(API):
 
         query_params = {
             'namespace': 'dynamic',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
     
-    def get_connected_realm(self, region: Optional[str], locale: Optional[str], connected_realm_id: int) -> Dict:
+    def get_connected_realm(self, connected_realm_id: int, **kwargs: Any) -> Dict:
         """
         This function will return the connected realm from the API.
 
@@ -38,8 +37,6 @@ class ConnectedRealm(API):
             /data/wow/connected-realm/{connected_realm_id}
 
         Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
             connected_realm_id: The ID of the connected realm.
 
         Returns:
@@ -52,11 +49,32 @@ class ConnectedRealm(API):
         if connected_realm_id is None:
             raise ValueError('connected_realm_id is required')
 
-        api = '/data/wow/connected-realm/{}'
+        api = f'/data/wow/connected-realm/{connected_realm_id}'
 
         query_params = {
             'namespace': 'dynamic',
-            'locale': locale,
         }
 
-        return super().get_api(region, api.format(connected_realm_id), query_params)
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+    
+    def get_connected_realm_search(self, **kwargs: Any) -> Dict:
+        """
+        This function will return the connected realm search from the API.
+
+        Requested API:
+            /data/wow/search/connected-realm
+
+        Returns:
+            A dictionary of the connected realm search.
+
+        Raises:
+            ValueError: If connected_realm_id is not provided.
+        """
+
+        api = '/data/wow/search/connected-realm'
+
+        query_params = {
+            'namespace': 'dynamic',
+        }
+
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
