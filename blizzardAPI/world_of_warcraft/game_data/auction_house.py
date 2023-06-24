@@ -31,6 +31,8 @@ class AuctionHouse(API):
         query_params = {
             'namespace': 'dynamic',
         }
+        
+        query_params.update(kwargs)
 
         return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
 
@@ -50,5 +52,7 @@ class AuctionHouse(API):
         query_params = {
             'namespace': 'dynamic',
         }
+
+        query_params.update(kwargs)
 
         return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
