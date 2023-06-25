@@ -1,4 +1,4 @@
-from typing import Optional, Dict
+from typing import Optional, Dict, Any
 from ...api import API
 
 class Heirloom(API):
@@ -6,16 +6,12 @@ class Heirloom(API):
     def __init__(self, client_id, client_secret):
         super().__init__(client_id, client_secret)
 
-    def get_heirloom_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
+    def get_heirloom_index(self, **kwargs: Any) -> Dict:
         """
         This function will return the index of heirlooms from the API.
 
         Requested API:
             /data/wow/item-class/index
-
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the heirloom index.
@@ -25,12 +21,13 @@ class Heirloom(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
 
-    def get_heirloom(self, region: Optional[str], locale: Optional[str], heirloom_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_heirloom(self, heirloom_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves information about a specific heirloom in the World of Warcraft
         game.
@@ -39,8 +36,6 @@ class Heirloom(API):
             /data/wow/item-class/{heirloom_id}
 
         Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
             heirloom_id: The ID of the heirloom.
 
         Returns:
@@ -53,11 +48,12 @@ class Heirloom(API):
         if heirloom_id is None:
             raise ValueError('heirloom_id is required')
 
-        api = '/data/wow/item-class/{}'
+        api = f'/data/wow/item-class/{heirloom_id}'
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api.format(heirloom_id), query_params)
+        query_params.update(kwargs)
+
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
