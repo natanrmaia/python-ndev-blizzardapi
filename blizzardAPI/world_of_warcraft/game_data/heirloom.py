@@ -11,13 +11,13 @@ class Heirloom(API):
         This function will return the index of heirlooms from the API.
 
         Requested API:
-            /data/wow/item-class/index
+            /data/wow/heirloom/index
 
         Returns:
             A dictionary of the heirloom index.
         """
 
-        api = '/data/wow/item-class/index'
+        api = '/data/wow/heirloom/index'
 
         query_params = {
             'namespace': 'static',
@@ -33,7 +33,7 @@ class Heirloom(API):
         game.
 
         Requested API:
-            /data/wow/item-class/{heirloom_id}
+            /data/wow/heirloom/{heirloom_id}
 
         Args:
             heirloom_id: The ID of the heirloom.
@@ -48,7 +48,7 @@ class Heirloom(API):
         if heirloom_id is None:
             raise ValueError('heirloom_id is required')
 
-        api = f'/data/wow/item-class/{heirloom_id}'
+        api = f'/data/wow/heirloom/{heirloom_id}'
 
         query_params = {
             'namespace': 'static',
