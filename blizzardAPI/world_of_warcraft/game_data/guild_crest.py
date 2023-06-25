@@ -1,4 +1,4 @@
-from typing import Optional, Dict
+from typing import Optional, Dict, Any
 from ...api import API
 
 class GuildCrest(API):
@@ -6,16 +6,12 @@ class GuildCrest(API):
     def __init__(self, client_id, client_secret):
         super().__init__(client_id, client_secret)
 
-    def get_guild_crest_components_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
+    def get_guild_crest_components_index(self, **kwargs: Any) -> Dict:
         """
         This function will return the index of guild crest media from the API.
 
         Requested API:
             /data/wow/guild-crest/index
-
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the guild crest media index.
@@ -25,21 +21,18 @@ class GuildCrest(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
 
-    def get_guild_crest_border_media(self, region: Optional[str], locale: Optional[str], border_id: int) -> Dict:
+    def get_guild_crest_border_media(self, border_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves information about a specific guild crest border from the API.
 
         Requested API:
-            /data/wow/guild-crest/border/{border_id}
+           /data/wow/media/guild-crest/border/{border_id}
 
         Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
             border_id: The ID of the guild crest border.
 
         Returns:
@@ -52,25 +45,24 @@ class GuildCrest(API):
         if border_id is None:
             raise ValueError('border_id is required')
 
-        api = '/data/wow/guild-crest/border/{}'
+        api = f'/data/wow/media/guild-crest/border/{border_id}'
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api.format(border_id), query_params)
+        query_params.update(kwargs)
 
-    def get_guild_crest_emblem_media(self, region: Optional[str], locale: Optional[str], emblem_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_guild_crest_emblem_media(self, emblem_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves information about a specific guild crest emblem from the API.
 
         Requested API:
-            /data/wow/guild-crest/emblem/{emblem_id}
+            /data/wow/media/guild-crest/emblem/{emblem_id}
 
         Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
             emblem_id: The ID of the guild crest emblem.
 
         Returns:
@@ -83,11 +75,12 @@ class GuildCrest(API):
         if emblem_id is None:
             raise ValueError('emblem_id is required')
 
-        api = '/data/wow/guild-crest/emblem/{}'
+        api = f'/data/wow/media/guild-crest/emblem/{emblem_id}'
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api.format(emblem_id), query_params)
+        query_params.update(kwargs)
+
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
