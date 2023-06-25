@@ -70,7 +70,7 @@ class API:
         """
 
         if response.status_code != 200:
-            msg = 'The response code was {0}. Check the response.json() for more information.'.format(response.status_code)
+            msg = 'The response code was {0}. Error: {1}'.format(response.status_code, response.text)
             raise ValueError(msg)
 
         return response.json()
