@@ -1,4 +1,4 @@
-from typing import Optional, Dict
+from typing import Optional, Dict, Any
 from ...api import API
 
 class Item(API):
@@ -6,16 +6,12 @@ class Item(API):
     def __init__(self, client_id, client_secret):
         super().__init__(client_id, client_secret)
 
-    def get_item_classes_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
+    def get_item_classes_index(self, **kwargs: Any) -> Dict:
         """
         This function will return the index of item classes from the API.
 
         Requested API:
             /data/wow/item-class/index
-
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the item class index.
@@ -25,12 +21,13 @@ class Item(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
 
-    def get_item_class(self, region: Optional[str], locale: Optional[str], item_class_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_item_class(self, item_class_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves information about a specific item class in the World of Warcraft
         game.
@@ -39,8 +36,6 @@ class Item(API):
             /data/wow/item-class/{item_class_id}
 
         Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
             item_class_id: The ID of the item class.
 
         Returns:
@@ -53,25 +48,22 @@ class Item(API):
         if item_class_id is None:
             raise ValueError('item_class_id is required')
 
-        api = '/data/wow/item-class/{}'
+        api = f'/data/wow/item-class/{item_class_id}'
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api.format(item_class_id), query_params)
+        query_params.update(kwargs)
 
-    def get_item_sets_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_item_sets_index(self, **kwargs: Any) -> Dict:
         """
         This function will return the index of item sets from the API.
 
         Requested API:
             /data/wow/item-set/index
-
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the item set index.
@@ -81,12 +73,13 @@ class Item(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
 
-    def get_item_set(self, region: Optional[str], locale: Optional[str], item_set_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_item_set(self, item_set_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves information about a specific item set from the API.
 
@@ -94,8 +87,6 @@ class Item(API):
             /data/wow/item-set/{item_set_id}
 
         Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
             item_set_id: The ID of the item set.
 
         Returns:
@@ -108,16 +99,17 @@ class Item(API):
         if item_set_id is None:
             raise ValueError('item_set_id is required')
 
-        api = '/data/wow/item-set/{}'
+        api = f'/data/wow/item-set/{item_set_id}'
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api.format(item_set_id), query_params)
+        query_params.update(kwargs)
 
-    def get_item_subclass(self, region: Optional[str], locale: Optional[str], item_class_id: int, item_subclass_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_item_subclass(self, item_class_id: int, item_subclass_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves information about a specific item subclass from the API.
 
@@ -125,8 +117,6 @@ class Item(API):
             /data/wow/item-class/{item_class_id}/item-subclass/{item_subclass_id}
 
         Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
             item_class_id: The ID of the item class.
             item_subclass_id: The ID of the item subclass.
 
@@ -142,16 +132,17 @@ class Item(API):
         if item_subclass_id is None:
             raise ValueError('item_subclass_id is required')
 
-        api = '/data/wow/item-class/{}/item-subclass/{}'
+        api = f'/data/wow/item-class/{item_class_id}/item-subclass/{item_subclass_id}'
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api.format(item_class_id, item_subclass_id), query_params)
+        query_params.update(kwargs)
 
-    def get_item(self, region: Optional[str], locale: Optional[str], item_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_item(self, item_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves information about a specific item from the API.
 
@@ -173,16 +164,17 @@ class Item(API):
         if item_id is None:
             raise ValueError('item_id is required')
 
-        api = '/data/wow/item/{}'
+        api = f'/data/wow/item/{item_id}'
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api.format(item_id), query_params)
+        query_params.update(kwargs)
 
-    def get_item_media(self, region: Optional[str], locale: Optional[str], item_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_item_media(self, item_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves media information about a specific item from the API.
 
@@ -190,8 +182,6 @@ class Item(API):
             /data/wow/media/item/{item_id}
 
         Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
             item_id: The ID of the item.
 
         Returns:
@@ -204,16 +194,17 @@ class Item(API):
         if item_id is None:
             raise ValueError('item_id is required')
 
-        api = '/data/wow/media/item/{}'
+        api = f'/data/wow/media/item/{item_id}'
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api.format(item_id), query_params)
+        query_params.update(kwargs)
 
-    def get_item_media(self, region: Optional[str], locale: Optional[str], item_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_item_media(self, item_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves media information about a specific item from the API.
 
@@ -221,8 +212,6 @@ class Item(API):
             /data/wow/media/item/{item_id}
 
         Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
             item_id: The ID of the item.
 
         Returns:
@@ -235,27 +224,22 @@ class Item(API):
         if item_id is None:
             raise ValueError('item_id is required')
 
-        api = '/data/wow/media/item/{}'
+        api = f'/data/wow/media/item/{item_id}'
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api.format(item_id), query_params)
+        query_params.update(kwargs)
 
-    def get_item_search(self, region: Optional[str], locale: Optional[str], name_en: Optional[str], order_by: Optional[str], page: Optional[int]) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_item_search(self, **kwargs: Any) -> Dict:
         """
         This function will perform a search of items from the API.
 
         Requested API:
             /data/wow/search/item
-
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
-            name_en: The name of the item in English.
-            order_by: The field to order the results by.
 
         Returns:
             A dictionary of the item search results.
@@ -265,10 +249,8 @@ class Item(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
-            'name.en_US': name_en,
-            'orderby': order_by,
-            'page': page,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
+
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
