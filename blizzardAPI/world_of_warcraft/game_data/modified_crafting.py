@@ -1,4 +1,4 @@
-from typing import Optional, Dict
+from typing import Optional, Dict, Any
 from ...api import API
 
 class ModifiedCrafting(API):
@@ -6,16 +6,12 @@ class ModifiedCrafting(API):
     def __init__(self, client_id, client_secret):
         super().__init__(client_id, client_secret)
 
-    def get_modified_crafting_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
+    def get_modified_crafting_index(self, **kwargs: Any) -> Dict:
         """
         This function will return the index of modified crafting from the API.
 
         Requested API:
             /data/wow/modified-crafting/index
-
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the modified crafting index.
@@ -25,21 +21,18 @@ class ModifiedCrafting(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
+
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
     
-    def get_modified_crafting_category_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
+    def get_modified_crafting_category_index(self, **kwargs: Any) -> Dict:
         """
         This function will return the index of modified crafting category from the API.
 
         Requested API:
             /data/wow/modified-crafting/category/index
-
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the modified crafting category index.
@@ -49,12 +42,13 @@ class ModifiedCrafting(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
+
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
     
-    def get_modified_crafting_category(self, region: Optional[str], locale: Optional[str], modified_crafting_category_id: int) -> Dict:
+    def get_modified_crafting_category(self, modified_crafting_category_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves information about a specific modified crafting category in the World of Warcraft
         game.
@@ -63,8 +57,6 @@ class ModifiedCrafting(API):
             /data/wow/modified-crafting/category/{modified_crafting_category_id}
 
         Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
             modified_crafting_category_id: The ID of the modified crafting category.
 
         Returns:
@@ -77,25 +69,22 @@ class ModifiedCrafting(API):
         if modified_crafting_category_id is None:
             raise ValueError('modified_crafting_category_id is required')
 
-        api = '/data/wow/modified-crafting/category/{}'
+        api = f'/data/wow/modified-crafting/category/{modified_crafting_category_id}'
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api.format(modified_crafting_category_id), query_params)
+        query_params.update(kwargs)
+
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
     
-    def get_modified_crafting_reagent_slot_type_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
+    def get_modified_crafting_reagent_slot_type_index(self, **kwargs: Any) -> Dict:
         """
         This function will return the index of modified crafting reagent slot type from the API.
 
         Requested API:
             /data/wow/modified-crafting/reagent-slot-type/index
-
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the modified crafting reagent slot type index.
@@ -105,12 +94,13 @@ class ModifiedCrafting(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
+
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
     
-    def get_modified_crafting_reagent_slot_type(self, region: Optional[str], locale: Optional[str], modified_crafting_reagent_slot_type_id: int) -> Dict:
+    def get_modified_crafting_reagent_slot_type(self, modified_crafting_reagent_slot_type_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves information about a specific modified crafting reagent slot type in the World of Warcraft
         game.
@@ -119,8 +109,6 @@ class ModifiedCrafting(API):
             /data/wow/modified-crafting/reagent-slot-type/{modified_crafting_reagent_slot_type_id}
 
         Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
             modified_crafting_reagent_slot_type_id: The ID of the modified crafting reagent slot type.
 
         Returns:
@@ -133,11 +121,12 @@ class ModifiedCrafting(API):
         if modified_crafting_reagent_slot_type_id is None:
             raise ValueError('modified_crafting_reagent_slot_type_id is required')
 
-        api = '/data/wow/modified-crafting/reagent-slot-type/{}'
+        api = f'/data/wow/modified-crafting/reagent-slot-type/{modified_crafting_reagent_slot_type_id}'
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api.format(modified_crafting_reagent_slot_type_id), query_params)
+        query_params.update(kwargs)
+
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
