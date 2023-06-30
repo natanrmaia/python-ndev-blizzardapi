@@ -1,4 +1,4 @@
-from typing import Dict, Optional
+from typing import Dict, Optional, Any
 from ...api import API
 
 class MythicKeystoneLeaderboard(API):
@@ -6,7 +6,7 @@ class MythicKeystoneLeaderboard(API):
     def __init__(self, client_id, client_secret):
         super().__init__(client_id, client_secret)
 
-    def get_mythic_keystone_leaderboards_index(self, region: Optional[str], locale: Optional[str], connected_realm_id: int) -> Dict:
+    def get_mythic_keystone_leaderboards_index(self, connected_realm_id: int,  **kwargs: Any) -> Dict:
         """
         This function will return the index of mythic keystone leaderboards from the API.
 
@@ -14,8 +14,6 @@ class MythicKeystoneLeaderboard(API):
             /data/wow/connected-realm/{connectedRealmId}/mythic-leaderboard/index
 
         Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
             connected_realm_id: The ID of the connected realm you want to retrieve the mythic keystone leaderboards index from.
 
         Returns:
@@ -26,12 +24,13 @@ class MythicKeystoneLeaderboard(API):
 
         query_params = {
             'namespace': 'dynamic',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
 
-    def get_mythic_keystone_leaderboard(self, region: Optional[str], locale: Optional[str], connected_realm_id: int, dungeon_id: int, period: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_mythic_keystone_leaderboard(self, connected_realm_id: int, dungeon_id: int, period: int, **kwargs: Any) -> Dict:
         """
         This function will return the details of a specific mythic keystone leaderboard from the API.
 
@@ -39,8 +38,6 @@ class MythicKeystoneLeaderboard(API):
             /data/wow/connected-realm/{connectedRealmId}/mythic-leaderboard/{dungeonId}/period/{period}
 
         Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
             connected_realm_id: The ID of the connected realm you want to retrieve the mythic keystone leaderboard from.
             dungeon_id: The ID of the dungeon you want to retrieve the mythic keystone leaderboard from.
             period: The ID of the period you want to retrieve the mythic keystone leaderboard from.
@@ -53,7 +50,8 @@ class MythicKeystoneLeaderboard(API):
 
         query_params = {
             'namespace': 'dynamic',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
+
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)

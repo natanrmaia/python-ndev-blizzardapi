@@ -13,7 +13,7 @@ from .modified_crafting             import ModifiedCrafting
 from .mount                         import Mount
 from .mythic_keystone_affix         import MythicKeystoneAffix
 from .mythic_keystone_dungeon       import MythicKeystoneDungeon
-# from .mythic_keystone_leaderboard   import MythicKeystoneLeaderboard
+from .mythic_keystone_leaderboard   import MythicKeystoneLeaderboard
 # from .mythic_raid_leaderboard       import MythicRaidLeaderboard
 # from .pet                           import Pet
 # from .playable_class                import PlayableClass
@@ -52,7 +52,7 @@ class Game:
         self.mount                            = Mount(client_id, client_secret)
         self.mythic_keystone_Affix            = MythicKeystoneAffix(client_id, client_secret)
         self.mythic_keystone_dungeon          = MythicKeystoneDungeon(client_id, client_secret)
-        # self.mythic_keystone_leaderboard      = MythicKeystoneLeaderboard(client_id, client_secret)
+        self.mythic_keystone_leaderboard      = MythicKeystoneLeaderboard(client_id, client_secret)
         # self.mythic_raid_leaderboard          = MythicRaidLeaderboard(client_id, client_secret)
         # self.pet                              = Pet(client_id, client_secret)
         # self.playable_class                   = PlayableClass(client_id, client_secret)
