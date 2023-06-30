@@ -17,7 +17,7 @@ from .mythic_keystone_leaderboard   import MythicKeystoneLeaderboard
 from .mythic_raid_leaderboard       import MythicRaidLeaderboard
 from .pet                           import Pet
 from .playable_class                import PlayableClass
-# from .playable_race                 import PlayableRace
+from .playable_race                 import PlayableRace
 # from .playable_specialization       import PlayableSpecialization
 # from .power_type                    import PowerType
 # from .profession                    import Profession
@@ -56,7 +56,7 @@ class Game:
         self.mythic_raid_leaderboard          = MythicRaidLeaderboard(client_id, client_secret)
         self.pet                              = Pet(client_id, client_secret)
         self.playable_class                   = PlayableClass(client_id, client_secret)
-        # self.playable_race                    = PlayableRace(client_id, client_secret)
+        self.playable_race                    = PlayableRace(client_id, client_secret)
         # self.playable_specialization          = PlayableSpecialization(client_id, client_secret)
         # self.power_type                       = PowerType(client_id, client_secret)
         # self.profession                       = Profession(client_id, client_secret)

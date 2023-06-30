@@ -1,4 +1,4 @@
-from typing import Dict, Optional
+from typing import Dict, Optional, Any
 from ...api import API
 
 class PlayableRace(API):
@@ -6,16 +6,12 @@ class PlayableRace(API):
     def __init__(self, client_id, client_secret):
         super().__init__(client_id, client_secret)
 
-    def get_playable_races_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
+    def get_playable_races_index(self, **kwargs: Any) -> Dict:
         """
         This function will return the index of playable races from the API.
 
         Requested API:
             /data/wow/playable-race/index
-
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the playable races index.
@@ -23,14 +19,16 @@ class PlayableRace(API):
 
         api = '/data/wow/playable-race/index'
 
+
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
 
-    def get_playable_race(self, region: Optional[str], locale: Optional[str], playable_race_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_playable_race(self, playable_race_id: int, **kwargs: Any) -> Dict:
         """
         This function will return the details of a specific playable race from the API.
 
@@ -38,9 +36,7 @@ class PlayableRace(API):
             /data/wow/playable-race/{playableRaceId}
 
         Args:
-            region: The region of the API you want to access.
             playable_race_id: The ID of the playable race you want to retrieve.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the playable race details.
@@ -50,7 +46,8 @@ class PlayableRace(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
+
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
