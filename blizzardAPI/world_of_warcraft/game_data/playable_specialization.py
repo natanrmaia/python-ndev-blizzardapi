@@ -1,4 +1,4 @@
-from typing import Dict, Optional
+from typing import Dict, Optional, Any
 from ...api import API
 
 class PlayableSpecialization(API):
@@ -6,16 +6,12 @@ class PlayableSpecialization(API):
     def __init__(self, client_id, client_secret):
         super().__init__(client_id, client_secret)
 
-    def get_playable_specializations_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
+    def get_playable_specializations_index(self, **kwargs: Any) -> Dict:
         """
         This function will return the index of playable specializations from the API.
 
         Requested API:
             /data/wow/playable-specialization/index
-
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the playable specializations index.
@@ -25,12 +21,13 @@ class PlayableSpecialization(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
 
-    def get_playable_specialization(self, region: Optional[str], locale: Optional[str], spec_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_playable_specialization(self, spec_id: int, **kwargs: Any) -> Dict:
         """
         This function will return the details of a specific playable specialization from the API.
 
@@ -38,9 +35,7 @@ class PlayableSpecialization(API):
             /data/wow/playable-specialization/{specId}
 
         Args:
-            region: The region of the API you want to access.
             spec_id: The ID of the playable specialization you want to retrieve.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the playable specialization details.
@@ -50,12 +45,13 @@ class PlayableSpecialization(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
 
-    def get_playable_specialization_media(self, region: Optional[str], locale: Optional[str], spec_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_playable_specialization_media(self, spec_id: int,  **kwargs: Any) -> Dict:
         """
         This function will return the media of a specific playable specialization from the API.
 
@@ -63,9 +59,7 @@ class PlayableSpecialization(API):
             /data/wow/media/playable-specialization/{specId}
 
         Args:
-            region: The region of the API you want to access.
             spec_id: The ID of the playable specialization you want to retrieve.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the playable specialization media.
@@ -75,7 +69,8 @@ class PlayableSpecialization(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
+
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
