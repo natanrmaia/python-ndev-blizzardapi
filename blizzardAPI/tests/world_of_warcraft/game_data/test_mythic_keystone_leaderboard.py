@@ -39,7 +39,7 @@ class TestMythicKeystoneLeaderboard:
         """
 
         mythic_keystone_leaderboard = MythicKeystoneLeaderboard(api_settings['client_id'], api_settings['client_secret'])
-        result = mythic_keystone_leaderboard.get_mythic_keystone_leaderboard(11, 197, 197)
+        result = mythic_keystone_leaderboard.get_mythic_keystone_leaderboard(11, 197, 641)
 
         if not isinstance(result, dict):
             return False
