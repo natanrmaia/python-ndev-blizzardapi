@@ -1,4 +1,4 @@
-from typing import Dict, Optional
+from typing import Dict, Optional, Any
 from ...api import API
 
 class PlayableClass(API):
@@ -6,16 +6,12 @@ class PlayableClass(API):
     def __init__(self, client_id, client_secret):
         super().__init__(client_id, client_secret)
 
-    def get_playable_classes_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
+    def get_playable_classes_index(self, **kwargs: Any) -> Dict:
         """
         This function will return the index of playable classes from the API.
 
         Requested API:
             /data/wow/playable-class/index
-
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the playable classes index.
@@ -25,12 +21,13 @@ class PlayableClass(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
 
-    def get_playable_class(self, region: Optional[str], locale: Optional[str], class_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_playable_class(self, class_id: int, **kwargs: Any) -> Dict:
         """
         This function will return the details of a specific playable class from the API.
 
@@ -38,9 +35,7 @@ class PlayableClass(API):
             /data/wow/playable-class/{classId}
 
         Args:
-            region: The region of the API you want to access.
             class_id: The ID of the playable class you want to retrieve.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the playable class details.
@@ -50,12 +45,13 @@ class PlayableClass(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
 
-    def get_playable_class_media(self, region: Optional[str], locale: Optional[str], playable_class_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_playable_class_media(self, playable_class_id: int, **kwargs: Any) -> Dict:
         """
         This function will return the media of a specific playable class from the API.
 
@@ -63,9 +59,7 @@ class PlayableClass(API):
             /data/wow/media/playable-class/{playableClassId}
 
         Args:
-            region: The region of the API you want to access.
             playable_class_id: The ID of the playable class you want to retrieve.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the playable class media.
@@ -75,12 +69,13 @@ class PlayableClass(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
 
-    def get_pvp_talent_slots(self, region: Optional[str], locale: Optional[str], class_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+    
+    def get_pvp_talent_slots(self, class_id: int, **kwargs: Any) -> Dict:
         """
         This function will return the PvP talent slots of a specific playable class from the API.
 
@@ -88,9 +83,7 @@ class PlayableClass(API):
             /data/wow/playable-class/{classId}/pvp-talent-slots
 
         Args:
-            region: The region of the API you want to access.
             class_id: The ID of the playable class you want to retrieve.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the PvP talent slots of the playable class.
@@ -100,7 +93,8 @@ class PlayableClass(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
+
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
