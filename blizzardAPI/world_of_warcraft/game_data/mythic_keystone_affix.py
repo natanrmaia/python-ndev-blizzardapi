@@ -1,4 +1,4 @@
-from typing import Dict, Optional
+from typing import Dict, Optional, Any
 from ...api import API
 
 class MythicKeystoneAffix(API):
@@ -6,16 +6,12 @@ class MythicKeystoneAffix(API):
     def __init__(self, client_id, client_secret):
         super().__init__(client_id, client_secret)
 
-    def get_mythic_keystone_affixes_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
+    def get_mythic_keystone_affixes_index(self, **kwargs: Any) -> Dict:
         """
         This function will return the index of mythic keystone affixes from the API.
 
         Requested API:
             /data/wow/keystone-affix/index
-
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the mythic keystone affixes index.
@@ -25,12 +21,13 @@ class MythicKeystoneAffix(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
 
-    def get_mythic_keystone_affix(self, region: Optional[str], locale: Optional[str], keystone_affix_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_mythic_keystone_affix(self, keystone_affix_id: int, **kwargs: Any) -> Dict:
         """
         This function will return the details of a specific mythic keystone affix from the API.
 
@@ -38,9 +35,7 @@ class MythicKeystoneAffix(API):
             /data/wow/keystone-affix/{keystoneAffixId}
 
         Args:
-            region: The region of the API you want to access.
             keystone_affix_id: The ID of the mythic keystone affix you want to retrieve.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the mythic keystone affix details.
@@ -50,12 +45,13 @@ class MythicKeystoneAffix(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
 
-    def get_mythic_keystone_affix_media(self, region: Optional[str], locale: Optional[str], keystone_affix_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_mythic_keystone_affix_media(self, keystone_affix_id: int, **kwargs: Any) -> Dict:
         """
         This function will return the media of a specific mythic keystone affix from the API.
 
@@ -63,9 +59,7 @@ class MythicKeystoneAffix(API):
             /data/wow/media/keystone-affix/{keystoneAffixId}
 
         Args:
-            region: The region of the API you want to access.
             keystone_affix_id: The ID of the mythic keystone affix you want to retrieve.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the mythic keystone affix media.
@@ -75,7 +69,8 @@ class MythicKeystoneAffix(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
+
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
