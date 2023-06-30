@@ -1,4 +1,4 @@
-from typing import Dict, Optional
+from typing import Dict, Optional, Any
 from ...api import API
 
 class Pet(API):
@@ -6,16 +6,12 @@ class Pet(API):
     def __init__(self, client_id, client_secret):
         super().__init__(client_id, client_secret)
 
-    def get_pets_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
+    def get_pets_index(self, **kwargs: Any) -> Dict:
         """
         This function will return the index of pets from the API.
 
         Requested API:
             /data/wow/pet/index
-
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the pets index.
@@ -25,12 +21,13 @@ class Pet(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
 
-    def get_pet(self, region: Optional[str], locale: Optional[str], pet_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_pet(self, pet_id: int, **kwargs: Any) -> Dict:
         """
         This function will return the details of a specific pet from the API.
 
@@ -38,9 +35,7 @@ class Pet(API):
             /data/wow/pet/{petId}
 
         Args:
-            region: The region of the API you want to access.
             pet_id: The ID of the pet you want to retrieve.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the pet details.
@@ -50,12 +45,13 @@ class Pet(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
 
-    def get_pet_media(self, region: Optional[str], locale: Optional[str], pet_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_pet_media(self, pet_id: int, **kwargs: Any) -> Dict:
         """
         This function will return the media of a specific pet from the API.
 
@@ -63,9 +59,7 @@ class Pet(API):
             /data/wow/media/pet/{petId}
 
         Args:
-            region: The region of the API you want to access.
             pet_id: The ID of the pet you want to retrieve.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the pet media.
@@ -75,21 +69,18 @@ class Pet(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
 
-    def get_pet_abilities_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_pet_abilities_index(self, **kwargs: Any) -> Dict:
         """
         This function will return the index of pet abilities from the API.
 
         Requested API:
             /data/wow/pet-ability/index
-
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the pet abilities index.
@@ -99,12 +90,13 @@ class Pet(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
 
-    def get_pet_ability(self, region: Optional[str], locale: Optional[str], pet_ability_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_pet_ability(self, pet_ability_id: int, **kwargs: Any) -> Dict:
         """
         This function will return the details of a specific pet ability from the API.
 
@@ -112,9 +104,7 @@ class Pet(API):
             /data/wow/pet-ability/{petAbilityId}
 
         Args:
-            region: The region of the API you want to access.
             pet_ability_id: The ID of the pet ability you want to retrieve.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the pet ability details.
@@ -124,12 +114,13 @@ class Pet(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
 
-    def get_pet_ability_media(self, region: Optional[str], locale: Optional[str], pet_ability_id: int) -> Dict:
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+
+    def get_pet_ability_media(self, pet_ability_id: int, **kwargs: Any) -> Dict:
         """
         This function will return the media of a specific pet ability from the API.
 
@@ -137,9 +128,7 @@ class Pet(API):
             /data/wow/media/pet-ability/{petAbilityId}
 
         Args:
-            region: The region of the API you want to access.
             pet_ability_id: The ID of the pet ability you want to retrieve.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the pet ability media.
@@ -149,7 +138,8 @@ class Pet(API):
 
         query_params = {
             'namespace': 'static',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
+
+        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
