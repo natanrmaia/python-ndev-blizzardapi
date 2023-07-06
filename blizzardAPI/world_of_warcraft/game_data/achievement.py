@@ -114,8 +114,6 @@ class Achievement(API):
             /data/wow/media/achievement/{achievement_id}
 
         Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
             achievement_id: The ID of the achievement.
 
         Returns:
