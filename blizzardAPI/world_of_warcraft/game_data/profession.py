@@ -13,10 +13,6 @@ class Profession(API):
         Requested API:
             /data/wow/profession/index
 
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
-
         Returns:
             A dictionary of the professions index.
         """

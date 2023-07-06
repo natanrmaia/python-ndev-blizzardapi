@@ -13,10 +13,6 @@ class Journal(API):
         Requested API:
             /data/wow/journal-expansion/index
 
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
-
         Returns:
             A dictionary of the expansion index.
         """
@@ -69,10 +65,6 @@ class Journal(API):
         Requested API:
             /data/wow/journal-encounter/index
 
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
-
         Returns:
             A dictionary of the encounter index.
         """
@@ -81,7 +73,6 @@ class Journal(API):
 
         query_params = {
             'namespace': 'static',
-
         }
 
         query_params.update(kwargs)
@@ -113,13 +104,11 @@ class Journal(API):
 
         query_params = {
             'namespace': 'static',
-
         }
 
         query_params.update(kwargs)
 
         return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-
 
     def get_journal_encounter_search(self, **kwargs: Any) -> Dict:
         """
@@ -133,7 +122,6 @@ class Journal(API):
         """
 
         api = '/data/wow/search/journal-encounter'
-
 
         query_params = {
             'namespace': 'static',

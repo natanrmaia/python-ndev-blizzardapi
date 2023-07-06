@@ -14,10 +14,6 @@ class PvPTier(API):
         Requested API:
             /data/wow/pvp-tier/index
 
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
-
         Returns:
             A dictionary of the PvP tiers index.
         """

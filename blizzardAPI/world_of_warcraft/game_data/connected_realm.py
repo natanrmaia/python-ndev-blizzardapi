@@ -13,9 +13,6 @@ class ConnectedRealm(API):
         Requested API:
             /data/wow/connected-realm/index
 
-        Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
 
         Returns:
             A dictionary of the connected realm index.
