@@ -150,8 +150,6 @@ class Item(API):
             /data/wow/item/{item_id}
 
         Args:
-            region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
             item_id: The ID of the item.
 
         Returns:
@@ -174,35 +172,6 @@ class Item(API):
 
         return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
 
-    def get_item_media(self, item_id: int, **kwargs: Any) -> Dict:
-        """
-        This function retrieves media information about a specific item from the API.
-
-        Requested API:
-            /data/wow/media/item/{item_id}
-
-        Args:
-            item_id: The ID of the item.
-
-        Returns:
-            A dictionary of the item media.
-
-        Raises:
-            ValueError: If item_id is not provided.
-        """
-
-        if item_id is None:
-            raise ValueError('item_id is required')
-
-        api = f'/data/wow/media/item/{item_id}'
-
-        query_params = {
-            'namespace': 'static',
-        }
-
-        query_params.update(kwargs)
-
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
 
     def get_item_media(self, item_id: int, **kwargs: Any) -> Dict:
         """
