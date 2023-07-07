@@ -27,7 +27,7 @@ from .quest                         import Quest
 from .realm                         import Realm
 from .region                        import Region
 # from .reputation                    import Reputation
-# from .spell                         import Spell
+from .spell                         import Spell
 from .talent                        import Talent
 from .tech_talent                   import TechTalent
 from .title                         import Title
@@ -66,7 +66,7 @@ class Game:
         self.realm                            = Realm(client_id, client_secret)
         self.region                           = Region(client_id, client_secret)
         # self.reputation                       = Reputation(client_id, client_secret)
-        # self.spell                            = Spell(client_id, client_secret)
+        self.spell                            = Spell(client_id, client_secret)
         self.talent                           = Talent(client_id, client_secret)
         self.tech_talent                      = TechTalent(client_id, client_secret)
         self.title                            = Title(client_id, client_secret)
