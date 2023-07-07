@@ -28,7 +28,7 @@ from .realm                         import Realm
 from .region                        import Region
 # from .reputation                    import Reputation
 # from .spell                         import Spell
-# from .talent                        import Talent
+from .talent                        import Talent
 from .tech_talent                   import TechTalent
 from .title                         import Title
 from .token                         import Token
@@ -67,7 +67,7 @@ class Game:
         self.region                           = Region(client_id, client_secret)
         # self.reputation                       = Reputation(client_id, client_secret)
         # self.spell                            = Spell(client_id, client_secret)
-        # self.talent                           = Talent(client_id, client_secret)
+        self.talent                           = Talent(client_id, client_secret)
         self.tech_talent                      = TechTalent(client_id, client_secret)
         self.title                            = Title(client_id, client_secret)
         self.wow_token                        = Token(client_id, client_secret)
