@@ -25,7 +25,7 @@ from .pvp_season                    import PvPSeason
 from .pvp_tier                      import PvPTier
 from .quest                         import Quest
 from .realm                         import Realm
-# from .region                        import Region
+from .region                        import Region
 # from .reputation                    import Reputation
 # from .spell                         import Spell
 # from .talent                        import Talent
@@ -64,7 +64,7 @@ class Game:
         self.pvp_tier                         = PvPTier(client_id, client_secret)
         self.quest                            = Quest(client_id, client_secret)
         self.realm                            = Realm(client_id, client_secret)
-        # self.region                           = Region(client_id, client_secret)
+        self.region                           = Region(client_id, client_secret)
         # self.reputation                       = Reputation(client_id, client_secret)
         # self.spell                            = Spell(client_id, client_secret)
         # self.talent                           = Talent(client_id, client_secret)
