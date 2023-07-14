@@ -34,20 +34,25 @@ For support / feedback, send email for contato@natanael.dev.br.
 
 ## Usage Example
 ```python
-
   from blizzardAPI import BlizzardAPI
   
   api = BlizzardAPI(client_id, client_secret)
   api.bnet.oauth.get_user_info("us","imagine_token_here")
 ```
 
-### Battle.Net API
+## Blizzard APIs Supported
 
-| Python      | API URL    | API Name                                    |
-| :---------- | :--------- | :------------------------------------------ |
-| `api.bnet.oauth.get_user_info(region, access_token)`      | `/oauth/userinfo` | User Info (param) |
-| `api.bnet.oauth.get_token_validation(region, access_token)`      | `/oauth/check_token` | Token Validation (GET) |
+| API                     | Items           | Obs                   |
+| :---------------------- | :-------------- | :-------------------- |
+| **Battle.Net**          | OAuth API       | All Regions supported |
+| **World Of Warcraft**   | Game Data API   | _Profile Data API in development_ |
 
+
+## Tests using PyTest
+To perform the tests using PyTest, I recommend using the dotenv module. Read more in the documentation provided below.
+```cmd
+pytest blizzardAPI
+```
 
 ## Documentation
 
