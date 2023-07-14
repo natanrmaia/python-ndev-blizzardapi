@@ -21,6 +21,7 @@ pkginfo==1.9.6
 pluggy==1.2.0
 Pygments==2.15.1
 pytest==7.4.0
+python-dotenv==1.0.0
 python-ndev-blizzardapi==0.0.4
 pywin32-ctypes==0.2.2
 readme-renderer==40.0
