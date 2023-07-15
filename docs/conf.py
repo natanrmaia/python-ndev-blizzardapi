@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'python-ndev-blizzardapi'
-copyright = '2023, natanrmaia'
-author = 'natanrmaia'
+project = 'NDEV - Python BlizzardAPI'
+copyright = '2023, NDEV'
+author = 'NDEV'
 release = 'V0.0.5'
 
 # -- General configuration ---------------------------------------------------
