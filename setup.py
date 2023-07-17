@@ -2,10 +2,11 @@ from setuptools import setup, find_packages
 
 setup(
     name="python-ndev-blizzardapi",
-    version="0.0.5-alpha",
+    version="0.0.5",
     packages=find_packages(),
     install_requires=[
         "requests>=2.28.2",
+        "python-dotenv>=1.0.0",
     ],
     author="natanrmaia",
     author_email="contato@natanael.dev.br",
