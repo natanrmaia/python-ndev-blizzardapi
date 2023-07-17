@@ -20,13 +20,38 @@ class TestAccountProfile:
         account_profile = AccountProfile(api_settings['client_id'], api_settings['client_secret'])
         result = account_profile.get_account_profile_summary(api_settings['access_token'])
 
+        args = {
+            'region': api_settings['region']
+        }
+
         if not isinstance(result, dict):
             return False
         else:
             assert 'wow_accounts' in result
 
     def test_get_protected_account_profile_summary(self, api_settings : dict):
-        pass
+        """
+        This function tests the get_protected_account_profile_summary function from the AccountProfile class.
+
+        This function will test the following:
+            - If the function returns a dict.
+            - If the dict contains the key 'wow_accounts'.
+
+        Args:
+            api_settings (dict): A dictionary containing the api args required for test.
+
+        Returns:
+            A boolean value indicating if the test passed.
+        """
+
+        account_profile = AccountProfile(api_settings['client_id'], api_settings['client_secret'])
+        result = account_profile.get_protected_account_profile_summary(api_settings['access_token'], api_settings['realm_id'], api_settings['character_id'])
+
+        if not isinstance(result, dict):
+            return False
+        else:
+            assert 'wow_accounts' in result
+    
 
     def test_get_account_collections_index(self, api_settings : dict):
         """
