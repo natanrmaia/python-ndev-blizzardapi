@@ -18,7 +18,7 @@ class TestCharacterAchievements:
         """
 
         character_achievements = CharacterAchievements(api_settings['client_id'], api_settings['client_secret'])
-        result = character_achievements.get_character_achievements_summary(api_settings['access_token'], api_settings['realm_slug'], api_settings['character_name'])
+        result = character_achievements.get_character_achievements_summary(api_settings['realm_slug'], api_settings['character_name'])
 
         if not isinstance(result, dict):
             return False
@@ -41,7 +41,7 @@ class TestCharacterAchievements:
         """
 
         character_achievements = CharacterAchievements(api_settings['client_id'], api_settings['client_secret'])
-        result = character_achievements.get_character_achievements_statistics(api_settings['access_token'], api_settings['realm_slug'], api_settings['character_name'])
+        result = character_achievements.get_character_achievements_statistics(api_settings['realm_slug'], api_settings['character_name'])
 
         if not isinstance(result, dict):
             return False
