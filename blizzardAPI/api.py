@@ -42,6 +42,9 @@ class API:
             else:
                 url = self.oauth_url.format(region, api)
 
+        else:
+            raise ValueError('format_url must be either api or oauth')
+
         return url
 
     def get_client_token(self, region):
@@ -66,6 +69,10 @@ class API:
         :return: The response.json() method will convert the JSON string into a Python dictionary.
         """
 
+        if response.status_code != 200:
+            msg = 'The response code was {0}. Error: {1}'.format(response.status_code, response.text)
+            raise ValueError(msg)
+
         return response.json()
 
     def request_handler(self, url, region, query_params):
@@ -81,7 +88,7 @@ class API:
 
         return self.response_handler(response)
 
-    def get_api(self, region, api, query_params=None):
+    def get_api(self, **kwargs):
         """
         It takes a region, an api, and query_params, and returns the response
 
@@ -90,16 +97,23 @@ class API:
         :param query_params: The query parameters you want to pass to the API (optional)
         :return: The response is being returned.
         """
+
+        region          = kwargs.get('region')  or 'us'
+        api             = kwargs.get('api')     or None
+        query_params    = kwargs.get('query_params') or None
+
         if query_params is None:
             query_params = {}
 
         query_params['access_token'] = self.access_token
 
-        if query_params['locale'] is None:
+        if 'locale' not in query_params:
+            query_params['locale'] = ''
+        elif query_params['locale'] is None:
             query_params['locale'] = ''
 
-        if region is None:
-            region = 'us'
+        if api is None:
+            raise ValueError('api cannot be None')
 
         query_params['namespace'] = '{}-{}'.format(query_params['namespace'], region)
 

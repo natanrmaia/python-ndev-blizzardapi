@@ -1,4 +1,4 @@
-from typing import Optional, Dict
+from typing import Optional, Dict, Any
 from ...api import API
 
 class Token(API):
@@ -6,7 +6,7 @@ class Token(API):
     def __init__(self, client_id, client_secret):
         super().__init__(client_id, client_secret)
 
-    def get_token_index(self, region: Optional[str], locale: Optional[str]) -> Dict:
+    def get_token_index(self, region: str, **kwargs: Any) -> Dict:
         """
         This function will return the index of tokens from the API.
 
@@ -15,7 +15,7 @@ class Token(API):
 
         Args:
             region: The region of the API you want to access.
-            locale: The locale of the API you want to access.
+            **kwargs: Any additional query parameters to be passed to the API.
 
         Returns:
             A dict of WOW tokens prices.
@@ -23,9 +23,13 @@ class Token(API):
 
         api = '/data/wow/token/index'
 
+        if region is None:
+            raise ValueError('region is required')
+
         query_params = {
             'namespace': 'dynamic',
-            'locale': locale,
         }
 
-        return super().get_api(region, api, query_params)
+        query_params.update(kwargs)
+
+        return super().get_api(region=region, api=api, query_params=query_params, kwargs=kwargs)
