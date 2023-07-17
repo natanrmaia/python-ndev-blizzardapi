@@ -6,12 +6,13 @@
 Welcome Python BlizzardAPIs documentation!
 ===================================================
 
-Indices and tables
-==================
+.. toctree::
+   :maxdepth: 3
+   :numbered:
+   :caption: Table of Contents:
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   intro/index
+   howto/index
 
 Report or request
 ==================
@@ -22,37 +23,28 @@ Report or request
 * **Email:** `contato@natanael.dev.br <mailto:contato@natanael.dev.br>`_
 
 Why use this package?
-*********************
+=====================
 This package is designed to make it easy to use the `Blizzard API <https://develop.battle.net/documentation>`_ in Python. It handles authentication, the details of making requests, and receives the responses. It also provides a simple interface for accessing each of the API's features.
 
 Step by step
 ==================
-Are you new to Python BlizzardAPIs? 
+Are you new to Python BlizzardAPIs?
 If you answered yes to any of the above, then you are in the right place!
 
-.. toctree::
-   :maxdepth: 3
-   :numbered:
-   :caption: Table of Contents:
-
-   intro/index
-   howto/index
-
-* **From scratch:** 
-  :doc:`intro/index` |
+* **From scratch:**
   :doc:`intro/installation` |
   :doc:`intro/usage` |
-  :doc:`intro/best_practices` |
+  :doc:`Best practices <intro/best_practices>` |
 
 * **How to:**
-  :doc:`obtain a token <howto/index>` |
-  :doc:`use the API <howto/index>` |
-  :doc:`use the API with OAuth2 <howto/index>` |
+  :doc:`/howto/use_env_file` |
+  `Obtain a Blizzard Token <https://develop.battle.net/documentation/guides/getting-started>`_ |
+  :doc:`Test using PyTest <howto/index>` |
 
-* **How to test:**
-  :doc:`PyTest <howto/index>` |
-* **Reference:** 
+* **Reference:**
   `Blizzard Development Portal <https://develop.battle.net/documentation>`_ | 
+  `Python dotenv <https://pypi.org/project/python-dotenv/>`_ |
+  `PyTest <https://docs.pytest.org/en/stable/>`_ |
 
 
 
