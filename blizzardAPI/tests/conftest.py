@@ -56,6 +56,10 @@ def realm_slug(request):
 def character_name(request):
     return request.config.getoption("--character_name")
 
+@pytest.fixture
+def season_id(request):
+    return request.config.getoption("--season_id")
+
 @pytest.fixture(autouse=True)
 def setup():
     load_dotenv()
@@ -72,5 +76,6 @@ def api_settings(client, secret, region, locale, access_token, realm_id, charact
         'realm_id': realm_id or os.getenv('BLIZZARD_API_REALM_ID'),
         'character_id': character_id or os.getenv('BLIZZARD_API_CHARACTER_ID'),
         'realm_slug': realm_slug or os.getenv('BLIZZARD_API_REALM_SLUG'),
-        'character_name': character_name or os.getenv('BLIZZARD_API_CHARACTER_NAME')
+        'character_name': character_name or os.getenv('BLIZZARD_API_CHARACTER_NAME'),
+        'season_id': season_id or os.getenv('BLIZZARD_API_SEASON_ID')
     }

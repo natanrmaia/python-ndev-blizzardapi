@@ -62,6 +62,7 @@ By default, the `python-ndev-blizzardapi` library will look for the following en
 * `BLIZZARD_API_REALM_SLUG` - The realm slug to use for API requests (defaults is blank)
 * `BLIZZARD_API_CHARACTER_ID` - The character ID to use for API requests (defaults is blank)
 * `BLIZZARD_API_CHARACTER_NAME` - The character name to use for API requests (defaults is blank)
+* `BLIZZARD_API_SEASON_ID` - The season ID to use for API requests (defaults is blank)
 
 This means that you can set these variables in your `.env` file and the library will automatically load them for you.
 You can also override these variables by passing them directly to the `BlizzardApi` constructor.
