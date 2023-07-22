@@ -2,7 +2,7 @@ pyvenv.cfg
 /.vscode/
 __pycache__/
 constants.py
-teste.py
+_dev_test*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
