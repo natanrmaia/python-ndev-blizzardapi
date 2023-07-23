@@ -14,6 +14,9 @@ def pytest_addoption(parser):
     parser.addoption("--character_id", action="store", default=None)
     parser.addoption("--realm_slug", action="store", default=None)
     parser.addoption("--character_name", action="store", default=None)
+    parser.addoption("--season_id", action="store", default=None)
+    parser.addoption("--bracket", action="store", default=None)
+    parser.addoption("--guild_slug", action="store", default=None)
 
 
 @pytest.fixture
@@ -64,12 +67,17 @@ def season_id(request):
 def bracket(request):
     return request.config.getoption("--bracket")
 
+@pytest.fixture
+def guild_slug(request):
+    return request.config.getoption("--guild_slug")
+
 @pytest.fixture(autouse=True)
 def setup():
     load_dotenv()
 
+
 @pytest.fixture
-def api_settings(client, secret, region, locale, access_token, realm_id, character_id, realm_slug, character_name):
+def api_settings(client, secret, region, locale, access_token, realm_id, character_id, realm_slug, character_name, season_id, bracket, guild_slug):
 
     return {
         'client_id': client or os.getenv('BLIZZARD_API_CLIENT_ID'),
@@ -82,5 +90,6 @@ def api_settings(client, secret, region, locale, access_token, realm_id, charact
         'realm_slug': realm_slug or os.getenv('BLIZZARD_API_REALM_SLUG'),
         'character_name': character_name or os.getenv('BLIZZARD_API_CHARACTER_NAME'),
         'season_id': season_id or os.getenv('BLIZZARD_API_SEASON_ID'),
-        'bracket': bracket or os.getenv('BLIZZARD_API_BRACKET')
+        'bracket': bracket or os.getenv('BLIZZARD_API_BRACKET'),
+        'guild_slug': guild_slug or os.getenv('BLIZZARD_API_GUILD_SLUG')
     }
