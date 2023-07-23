@@ -56,5 +56,19 @@ By default, the `python-ndev-blizzardapi` library will look for the following en
 * `BLIZZARD_API_CLIENT_ID` - Your Blizzard API client ID
 * `BLIZZARD_API_CLIENT_SECRET` - Your Blizzard API client secret
 * `BLIZZARD_API_REGION` - The region to use for API requests (defaults to `us`)
+* `BLIZZARD_API_ACCESS_TOKEN` = The access token to use for API requests (optional)
+* `BLIZZARD_API_LOCALE` - The locale to use for API requests (defaults is blank)
+* `BLIZZARD_API_REALM_ID` - The realm ID to use for API requests (defaults is blank)
+* `BLIZZARD_API_REALM_SLUG` - The realm slug to use for API requests (defaults is blank)
+* `BLIZZARD_API_CHARACTER_ID` - The character ID to use for API requests (defaults is blank)
+* `BLIZZARD_API_CHARACTER_NAME` - The character name to use for API requests (defaults is blank)
+* `BLIZZARD_API_SEASON_ID` - The season ID to use for API requests (defaults is blank)
+* `BLIZZARD_API_BRACKET` - The bracket to use for API requests (defaults is blank)
+* `BLIZZARD_API_GUILD_SLUG` - The guild slug to use for API requests (defaults is blank)
 
 This means that you can set these variables in your `.env` file and the library will automatically load them for you.
+You can also override these variables by passing them directly to the `BlizzardApi` constructor.
+
+.. note:: 
+    There is an example `.env` file available in the github repository called `.env_example`. Use it as a reference.
+    Just remember to rename it to `.env` and fill in your own values.

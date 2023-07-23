@@ -16,10 +16,16 @@ This package is designed to make it easy to use the [Blizzard API](https://devel
 
 ## Blizzard APIs Supported
 
-| API                     | Items           | Obs                   |
-| :---------------------- | :-------------- | :-------------------- |
-| **Battle.Net**          | OAuth API       | All Regions supported |
-| **World Of Warcraft**   | Game Data API   | _Profile Data API in development_ |
+| API                               | Items                             | Obs                                         |
+| :-------------------------------- | :-------------------------------- | :------------------------------------------ |
+| **Battle.Net**                    | OAuth API                         | All Regions supported                       |
+| **World Of Warcraft (Retail)**    | Game Data API, Profile Data API   | All WoW Retail API Supported (Patch 10.1.5) |
+| **World Of Warcraft (Classic)**   | Game Data API, Profile Data API   | All WoW Retail API Supported (Patch 10.1.5) |
+| **Diablo 4**                      | Nothing                           | Prioritized once an official API emerges    |
+| **Hearthstone**                   | Nothing                           | Planned for the near future                 |
+| **Overwatch League**              | Nothing                           | Planned for the near future                 |
+| **StarCraft 2**                   | Nothing                           | Planned for the near future                 |
+| **Diablo 3**                      | Nothing                           | Not planned for addition                    |
 
 ## Report or Request
 - [Bug Report](https://github.com/natanrmaia/python-ndev-blizzardapi/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=)

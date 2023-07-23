@@ -29,7 +29,7 @@ Pygments==2.15.1
 pyspellchecker==0.7.2
 pytest==7.4.0
 python-dotenv==1.0.0
-python-ndev-blizzardapi==0.0.5a0
+python-ndev-blizzardapi==0.1.0
 pywin32-ctypes==0.2.2
 readme-renderer==40.0
 requests==2.31.0
