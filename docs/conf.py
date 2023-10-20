@@ -9,7 +9,7 @@
 project = 'NDEV - Python BlizzardAPI'
 copyright = '2023, NDEV'
 author = 'NDEV'
-release = '0.1.0'
+release = '0.1.2'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
