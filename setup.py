@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="python-ndev-blizzardapi",
-    version="0.1.0",
+    version="0.1.2",
     packages=find_packages(),
     install_requires=[
         "requests>=2.28.2",
@@ -18,7 +18,7 @@ setup(
         'Documentation': 'https://python-ndev-blizzardapi.readthedocs.io/en/latest/',
         'Source': 'https://github.com/natanrmaia/python-ndev-blizzardapi',
         'Bug Reports': 'https://github.com/natanrmaia/python-ndev-blizzardapi/issues',
-    },    
+    },
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
