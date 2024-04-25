@@ -26,7 +26,7 @@ class Quest(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_quest(self, quest_id: int, **kwargs: Any) -> Dict:
         """
@@ -56,7 +56,7 @@ class Quest(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_quest_categories_index(self, **kwargs: Any) -> Dict:
         """
@@ -77,7 +77,7 @@ class Quest(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_quest_category(self, quest_category_id: int, **kwargs: Any) -> Dict:
         """
@@ -107,7 +107,7 @@ class Quest(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_quest_areas_index(self, **kwargs: Any) -> Dict:
         """
@@ -129,7 +129,7 @@ class Quest(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_quest_area(self, quest_area_id: int, **kwargs: Any) -> Dict:
         """
@@ -159,7 +159,7 @@ class Quest(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_quest_types_index(self, **kwargs: Any) -> Dict:
         """
@@ -180,7 +180,7 @@ class Quest(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_quest_type(self, quest_type_id: int, **kwargs: Any) -> Dict:
         """
@@ -210,4 +210,4 @@ class Quest(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

@@ -2,7 +2,7 @@ from typing import Dict, Optional, Any
 from ...api import API
 
 class MythicKeystoneAffix(API):
-    
+
     def __init__(self, client_id, client_secret):
         super().__init__(client_id, client_secret)
 
@@ -25,7 +25,7 @@ class MythicKeystoneAffix(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_mythic_keystone_affix(self, keystone_affix_id: int, **kwargs: Any) -> Dict:
         """
@@ -49,7 +49,7 @@ class MythicKeystoneAffix(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_mythic_keystone_affix_media(self, keystone_affix_id: int, **kwargs: Any) -> Dict:
         """
@@ -73,4 +73,4 @@ class MythicKeystoneAffix(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

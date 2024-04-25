@@ -23,7 +23,7 @@ class Guild(API):
 
         if realm_slug is None:
             raise ValueError('realm_slug is required')
-        
+
         if guild_slug is None:
             raise ValueError('guild_slug is required')
 
@@ -35,8 +35,8 @@ class Guild(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_guild_activity(self, realm_slug: str, guild_slug: str, **kwargs: Any) -> Dict:
         """
         Returns the guild activity from the API.
@@ -55,7 +55,7 @@ class Guild(API):
 
         if realm_slug is None:
             raise ValueError('realm_slug is required')
-        
+
         if guild_slug is None:
             raise ValueError('guild_slug is required')
 
@@ -67,8 +67,8 @@ class Guild(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_guild_achievements(self, realm_slug: str, guild_slug: str, **kwargs: Any) -> Dict:
         """
         Returns the guild achievements from the API.
@@ -87,7 +87,7 @@ class Guild(API):
 
         if realm_slug is None:
             raise ValueError('realm_slug is required')
-        
+
         if guild_slug is None:
             raise ValueError('guild_slug is required')
 
@@ -99,8 +99,8 @@ class Guild(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_guild_roster(self, realm_slug: str, guild_slug: str, **kwargs: Any) -> Dict:
         """
         Returns the guild roster from the API.
@@ -119,7 +119,7 @@ class Guild(API):
 
         if realm_slug is None:
             raise ValueError('realm_slug is required')
-        
+
         if guild_slug is None:
             raise ValueError('guild_slug is required')
 
@@ -131,4 +131,4 @@ class Guild(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

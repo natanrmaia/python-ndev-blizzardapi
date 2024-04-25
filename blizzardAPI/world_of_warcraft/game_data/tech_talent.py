@@ -26,7 +26,7 @@ class TechTalent(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_tech_talent_tree(self, tech_talent_tree_id: int, **kwargs: Any) -> Dict:
         """
@@ -56,7 +56,7 @@ class TechTalent(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_tech_talent_index(self, **kwargs: Any) -> Dict:
         """
@@ -77,7 +77,7 @@ class TechTalent(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_tech_talent(self, tech_talent_id: int, **kwargs: Any) -> Dict:
         """
@@ -107,7 +107,7 @@ class TechTalent(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_tech_talent_media(self, tech_talent_id: int, **kwargs: Any) -> Dict:
         """
@@ -137,4 +137,4 @@ class TechTalent(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

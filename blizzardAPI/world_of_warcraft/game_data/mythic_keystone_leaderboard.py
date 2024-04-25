@@ -2,7 +2,7 @@ from typing import Dict, Optional, Any
 from ...api import API
 
 class MythicKeystoneLeaderboard(API):
-    
+
     def __init__(self, client_id, client_secret):
         super().__init__(client_id, client_secret)
 
@@ -28,7 +28,7 @@ class MythicKeystoneLeaderboard(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_mythic_keystone_leaderboard(self, connected_realm_id: int, dungeon_id: int, period: int, **kwargs: Any) -> Dict:
         """
@@ -54,4 +54,4 @@ class MythicKeystoneLeaderboard(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

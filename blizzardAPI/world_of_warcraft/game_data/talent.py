@@ -26,7 +26,7 @@ class Talent(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_talent_tree(self, talent_tree_id: int, spec_id: int, **kwargs: Any) -> Dict:
         """
@@ -59,7 +59,7 @@ class Talent(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_talent_tree_nodes(self, talent_tree_id: int, **kwargs: Any) -> Dict:
         """
@@ -89,7 +89,7 @@ class Talent(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_talents_index(self, **kwargs: Any) -> Dict:
         """
@@ -110,7 +110,7 @@ class Talent(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_talent(self, talent_id: int, **kwargs: Any) -> Dict:
         """
@@ -140,7 +140,7 @@ class Talent(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_pvp_talents_index(self, **kwargs: Any) -> Dict:
         """
@@ -161,7 +161,7 @@ class Talent(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_pvp_talent(self, pvp_talent_id: int, **kwargs: Any) -> Dict:
         """
@@ -191,4 +191,4 @@ class Talent(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

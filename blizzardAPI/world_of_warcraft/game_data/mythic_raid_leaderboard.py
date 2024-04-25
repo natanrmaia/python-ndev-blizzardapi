@@ -3,7 +3,7 @@ from typing import Dict, Optional, Any
 from ...api import API
 
 class MythicRaidLeaderboard(API):
-    
+
     def __init__(self, client_id, client_secret):
         super().__init__(client_id, client_secret)
 
@@ -25,7 +25,7 @@ class MythicRaidLeaderboard(API):
 
         if raid is None:
             raise ValueError('raid is required')
-        
+
         if faction is None:
             raise ValueError('faction is required')
 
@@ -37,4 +37,4 @@ class MythicRaidLeaderboard(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

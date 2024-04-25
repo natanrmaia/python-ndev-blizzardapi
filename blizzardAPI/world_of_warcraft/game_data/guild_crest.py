@@ -23,7 +23,7 @@ class GuildCrest(API):
             'namespace': 'static',
         }
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_guild_crest_border_media(self, border_id: int, **kwargs: Any) -> Dict:
         """
@@ -53,7 +53,7 @@ class GuildCrest(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_guild_crest_emblem_media(self, emblem_id: int, **kwargs: Any) -> Dict:
         """
@@ -83,4 +83,4 @@ class GuildCrest(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

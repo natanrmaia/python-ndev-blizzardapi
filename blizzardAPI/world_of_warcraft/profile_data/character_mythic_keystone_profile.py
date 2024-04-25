@@ -23,7 +23,7 @@ class CharacterMythicKeystoneProfile(API):
 
         if realm_slug is None:
             raise ValueError('realm_slug is required')
-        
+
         if character_name is None:
             raise ValueError('character_name is required')
 
@@ -35,8 +35,8 @@ class CharacterMythicKeystoneProfile(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_character_mythic_keystone_season_details(self, realm_slug: str, character_name: str, season_id: int, **kwargs: Any) -> Dict:
         """
         Returns the character mythic keystone season details from the API.
@@ -57,10 +57,10 @@ class CharacterMythicKeystoneProfile(API):
 
         if realm_slug is None:
             raise ValueError('realm_slug is required')
-        
+
         if character_name is None:
             raise ValueError('character_name is required')
-        
+
         if season_id is None:
             raise ValueError('season_id is required')
 
@@ -72,5 +72,4 @@ class CharacterMythicKeystoneProfile(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-        
+        return super().get_api(api=api, query_params=query_params, **kwargs)

@@ -24,7 +24,7 @@ class CharacterHunterPets(API):
 
         if realm_slug is None:
             raise ValueError('realm_slug is required')
-        
+
         if character_name is None:
             raise ValueError('character_name is required')
 
@@ -36,4 +36,4 @@ class CharacterHunterPets(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

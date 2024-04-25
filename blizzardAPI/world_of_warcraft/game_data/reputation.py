@@ -25,7 +25,7 @@ class Reputation(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_reputation_faction(self, reputation_faction_id: int, **kwargs: Any) -> Dict:
         """
@@ -55,7 +55,7 @@ class Reputation(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_reputation_tiers_index(self, **kwargs: Any) -> Dict:
         """
@@ -76,7 +76,7 @@ class Reputation(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_reputation_tiers(self, reputation_tiers_id: int, **kwargs: Any) -> Dict:
         """
@@ -106,4 +106,4 @@ class Reputation(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

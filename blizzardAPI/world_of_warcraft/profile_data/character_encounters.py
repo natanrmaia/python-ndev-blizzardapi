@@ -24,7 +24,7 @@ class CharacterEncounters(API):
 
         if realm_slug is None:
             raise ValueError('realm_slug is required')
-        
+
         if character_name is None:
             raise ValueError('character_name is required')
 
@@ -36,8 +36,8 @@ class CharacterEncounters(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_character_dungeons(self, realm_slug: str, character_name: str, **kwargs: Any) -> Dict:
         """
         Returns the character dungeons from the API.
@@ -56,7 +56,7 @@ class CharacterEncounters(API):
 
         if realm_slug is None:
             raise ValueError('realm_slug is required')
-        
+
         if character_name is None:
             raise ValueError('character_name is required')
 
@@ -68,8 +68,8 @@ class CharacterEncounters(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_character_raids(self, realm_slug: str, character_name: str, **kwargs: Any) -> Dict:
         """
         Returns the character raids from the API.
@@ -88,7 +88,7 @@ class CharacterEncounters(API):
 
         if realm_slug is None:
             raise ValueError('realm_slug is required')
-        
+
         if character_name is None:
             raise ValueError('character_name is required')
 
@@ -100,4 +100,4 @@ class CharacterEncounters(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

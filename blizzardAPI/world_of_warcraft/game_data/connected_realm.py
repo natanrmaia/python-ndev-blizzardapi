@@ -24,8 +24,8 @@ class ConnectedRealm(API):
             'namespace': 'dynamic',
         }
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_connected_realm(self, connected_realm_id: int, **kwargs: Any) -> Dict:
         """
         This function will return the connected realm from the API.
@@ -52,8 +52,8 @@ class ConnectedRealm(API):
             'namespace': 'dynamic',
         }
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_connected_realm_search(self, **kwargs: Any) -> Dict:
         """
         This function will return the connected realm search from the API.
@@ -74,4 +74,4 @@ class ConnectedRealm(API):
             'namespace': 'dynamic',
         }
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

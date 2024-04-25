@@ -25,8 +25,8 @@ class ModifiedCrafting(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_modified_crafting_category_index(self, **kwargs: Any) -> Dict:
         """
         This function will return the index of modified crafting category from the API.
@@ -46,8 +46,8 @@ class ModifiedCrafting(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_modified_crafting_category(self, modified_crafting_category_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves information about a specific modified crafting category in the World of Warcraft
@@ -77,8 +77,8 @@ class ModifiedCrafting(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_modified_crafting_reagent_slot_type_index(self, **kwargs: Any) -> Dict:
         """
         This function will return the index of modified crafting reagent slot type from the API.
@@ -98,8 +98,8 @@ class ModifiedCrafting(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_modified_crafting_reagent_slot_type(self, modified_crafting_reagent_slot_type_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves information about a specific modified crafting reagent slot type in the World of Warcraft
@@ -129,4 +129,4 @@ class ModifiedCrafting(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

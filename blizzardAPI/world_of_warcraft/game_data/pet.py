@@ -25,7 +25,7 @@ class Pet(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_pet(self, pet_id: int, **kwargs: Any) -> Dict:
         """
@@ -49,7 +49,7 @@ class Pet(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_pet_media(self, pet_id: int, **kwargs: Any) -> Dict:
         """
@@ -73,7 +73,7 @@ class Pet(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_pet_abilities_index(self, **kwargs: Any) -> Dict:
         """
@@ -94,7 +94,7 @@ class Pet(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_pet_ability(self, pet_ability_id: int, **kwargs: Any) -> Dict:
         """
@@ -118,7 +118,7 @@ class Pet(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_pet_ability_media(self, pet_ability_id: int, **kwargs: Any) -> Dict:
         """
@@ -142,4 +142,4 @@ class Pet(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

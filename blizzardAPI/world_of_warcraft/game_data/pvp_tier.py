@@ -26,7 +26,7 @@ class PvPTier(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_pvp_tier(self, pvp_tier_id: int, **kwargs: Any) -> Dict:
         """
@@ -56,7 +56,7 @@ class PvPTier(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_pvp_tier_media(self, pvp_tier_id: int, **kwargs: Any) -> Dict:
         """
@@ -86,4 +86,4 @@ class PvPTier(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
