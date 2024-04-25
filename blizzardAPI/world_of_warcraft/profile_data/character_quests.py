@@ -24,7 +24,7 @@ class CharacterQuests(API):
 
         if realm_slug is None:
             raise ValueError('realm_slug is required')
-        
+
         if character_name is None:
             raise ValueError('character_name is required')
 
@@ -36,8 +36,8 @@ class CharacterQuests(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_character_completed_quests(self, realm_slug: str, character_name: str, **kwargs: Any) -> Dict:
         """
         Returns the character completed quests from the API.
@@ -57,7 +57,7 @@ class CharacterQuests(API):
 
         if realm_slug is None:
             raise ValueError('realm_slug is required')
-        
+
         if character_name is None:
             raise ValueError('character_name is required')
 
@@ -69,4 +69,4 @@ class CharacterQuests(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

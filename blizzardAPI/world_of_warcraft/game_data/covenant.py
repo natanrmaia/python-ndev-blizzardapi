@@ -23,7 +23,7 @@ class Covenant(API):
             'namespace': 'static',
         }
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_covenant(self, covenant_id: int, **kwargs: Any) -> Dict:
         """
@@ -51,7 +51,7 @@ class Covenant(API):
             'namespace': 'static',
         }
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_covenant_media(self, covenant_id: int, **kwargs: Any) -> Dict:
         """
@@ -79,7 +79,7 @@ class Covenant(API):
             'namespace': 'static',
         }
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_soulbind_index(self, **kwargs: Any) -> Dict:
         """
@@ -98,7 +98,7 @@ class Covenant(API):
             'namespace': 'static',
         }
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_soulbind(self, soulbind_id: int, **kwargs: Any) -> Dict:
         """
@@ -126,7 +126,7 @@ class Covenant(API):
             'namespace': 'static',
         }
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_conduit_index(self, **kwargs: Any) -> Dict:
         """
@@ -145,7 +145,7 @@ class Covenant(API):
             'namespace': 'static',
         }
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_conduit(self, conduit_id: int, **kwargs: Any) -> Dict:
         """
@@ -173,4 +173,4 @@ class Covenant(API):
             'namespace': 'static',
         }
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

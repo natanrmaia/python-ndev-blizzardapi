@@ -25,7 +25,7 @@ class PvPSeason(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_pvp_season(self, pvp_season_id: int, **kwargs: Any) -> Dict:
         """
@@ -55,7 +55,7 @@ class PvPSeason(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_pvp_leaderboards_index(self, pvp_season_id: int, **kwargs: Any) -> Dict:
         """
@@ -79,7 +79,7 @@ class PvPSeason(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_pvp_leaderboard(self, pvp_season_id: int, pvp_bracket: str, **kwargs: Any) -> Dict:
         """
@@ -113,7 +113,7 @@ class PvPSeason(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_pvp_rewards_index(self, pvp_season_id: int, **kwargs: Any) -> Dict:
         """
@@ -137,4 +137,4 @@ class PvPSeason(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

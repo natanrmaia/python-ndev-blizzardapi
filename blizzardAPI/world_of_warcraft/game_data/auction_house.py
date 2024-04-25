@@ -31,10 +31,10 @@ class AuctionHouse(API):
         query_params = {
             'namespace': 'dynamic',
         }
-        
+
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_commodities(self, **kwargs: Any) -> Dict:
         """
@@ -55,4 +55,4 @@ class AuctionHouse(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

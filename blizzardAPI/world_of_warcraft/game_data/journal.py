@@ -25,7 +25,7 @@ class Journal(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_journal_expansion(self, journal_expansion_id: int, **kwargs: Any) -> Dict:
         """
@@ -56,7 +56,7 @@ class Journal(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_journal_encounters_index(self, **kwargs: Any) -> Dict:
         """
@@ -77,7 +77,7 @@ class Journal(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_journal_encounter(self, journal_encounter_id: int, **kwargs: Any) -> Dict:
         """
@@ -108,7 +108,7 @@ class Journal(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_journal_encounter_search(self, **kwargs: Any) -> Dict:
         """
@@ -129,7 +129,7 @@ class Journal(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_journal_instances_index(self, **kwargs: Any) -> Dict:
         """
@@ -150,7 +150,7 @@ class Journal(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_journal_instance(self, journal_instance_id: int, **kwargs: Any) -> Dict:
         """
@@ -180,7 +180,7 @@ class Journal(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_journal_instance_media(self, journal_instance_id: int, **kwargs: Any) -> Dict:
         """
@@ -210,4 +210,4 @@ class Journal(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

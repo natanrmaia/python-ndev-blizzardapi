@@ -29,8 +29,8 @@ class CharacterCollections(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_character_mounts_collection_summary(self, realm_slug: str, character_name: str, **kwargs: Any) -> Dict:
         """
         Returns a summary of the mounts a character has obtained.
@@ -55,8 +55,8 @@ class CharacterCollections(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_character_pets_collection_summary(self, realm_slug: str, character_name: str, **kwargs: Any) -> Dict:
         """
         Returns a summary of the pets a character has obtained.
@@ -81,8 +81,8 @@ class CharacterCollections(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_character_toys_collection_summary(self, realm_slug: str, character_name: str, **kwargs: Any) -> Dict:
         """
         Returns a summary of the toys a character has obtained.
@@ -107,8 +107,8 @@ class CharacterCollections(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_character_heirlooms_collection_summary(self, realm_slug: str, character_name: str, **kwargs: Any) -> Dict:
         """
         Returns a summary of the heirlooms a character has obtained.
@@ -133,4 +133,4 @@ class CharacterCollections(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

@@ -26,7 +26,7 @@ class Realm(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_realm(self, realm_slug: str, **kwargs: Any) -> Dict:
         """
@@ -56,7 +56,7 @@ class Realm(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_realm_search(self, search: str, **kwargs: Any) -> Dict:
         """
@@ -86,4 +86,4 @@ class Realm(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

@@ -25,7 +25,7 @@ class Profession(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_profession(self, profession_id: int, **kwargs: Any) -> Dict:
         """
@@ -55,7 +55,7 @@ class Profession(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_profession_media(self, profession_id: int, **kwargs: Any) -> Dict:
         """
@@ -85,7 +85,7 @@ class Profession(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_profession_skill_tier(self, profession_id: int, skill_tier_id: int, **kwargs: Any) -> Dict:
         """
@@ -108,7 +108,7 @@ class Profession(API):
 
         if profession_id is None:
             raise ValueError('Profession ID cannot be None.')
-        
+
         if skill_tier_id is None:
             raise ValueError('Skill tier ID cannot be None.')
 
@@ -121,7 +121,7 @@ class Profession(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_recipe(self, recipe_id: int, **kwargs: Any) -> Dict:
         """
@@ -153,7 +153,7 @@ class Profession(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_recipe_media(self, recipe_id: int, **kwargs: Any) -> Dict:
         """
@@ -183,4 +183,4 @@ class Profession(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

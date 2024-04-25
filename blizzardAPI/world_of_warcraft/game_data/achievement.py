@@ -26,19 +26,19 @@ class Achievement(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_achievement_category(self, achievement_category_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves information about a specific achievement category in the World of Warcraft
         game.
-        
+
         Requested API:
             /data/wow/achievement-category/{achievement_category_id}
 
         Args:
             achievement_category_id: The ID of the achievement category.
-        
+
         Returns:
             A dictionary of the achievement category.
 
@@ -57,15 +57,15 @@ class Achievement(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_achievement_index(self, **kwargs: Any) -> Dict:
         """
         This function will return the index of achievements from the API.
 
         Requested API:
             /data/wow/achievement/index
-        
+
         Returns:
             A dictionary of the achievement index.
         """
@@ -76,8 +76,8 @@ class Achievement(API):
             'namespace': 'static',
         }
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_achievement(self, achievement_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves information about a specific achievement in the World of Warcraft game.
@@ -104,8 +104,8 @@ class Achievement(API):
             'namespace': 'static',
         }
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_achievement_media(self, achievement_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves the media for a specific achievement in the API.
@@ -132,4 +132,4 @@ class Achievement(API):
             'namespace': 'static',
         }
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

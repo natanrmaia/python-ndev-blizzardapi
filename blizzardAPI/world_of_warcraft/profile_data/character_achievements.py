@@ -26,10 +26,10 @@ class CharacterAchievements(API):
         """
 
         api = f'/profile/wow/character/{realm_slug}/{character_name}/achievements'
-        
+
         if realm_slug is None:
             raise ValueError('realm_slug is required')
-        
+
         if character_name is None:
             raise ValueError('character_name is required')
 
@@ -39,15 +39,15 @@ class CharacterAchievements(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_character_achievements_statistics(self, realm_slug: str, character_name: str, **kwargs: Any) -> Dict:
 
         api = f'/profile/wow/character/{realm_slug}/{character_name}/achievements/statistics'
-        
+
         if realm_slug is None:
             raise ValueError('realm_slug is required')
-        
+
         if character_name is None:
             raise ValueError('character_name is required')
 
@@ -57,4 +57,4 @@ class CharacterAchievements(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

@@ -25,7 +25,7 @@ class PlayableClass(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_playable_class(self, class_id: int, **kwargs: Any) -> Dict:
         """
@@ -49,7 +49,7 @@ class PlayableClass(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
 
     def get_playable_class_media(self, playable_class_id: int, **kwargs: Any) -> Dict:
         """
@@ -73,8 +73,8 @@ class PlayableClass(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_pvp_talent_slots(self, class_id: int, **kwargs: Any) -> Dict:
         """
         This function will return the PvP talent slots of a specific playable class from the API.
@@ -97,4 +97,4 @@ class PlayableClass(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)

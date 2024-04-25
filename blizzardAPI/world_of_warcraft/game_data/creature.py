@@ -25,19 +25,19 @@ class Creature(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_creature_family(self, creature_family_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves information about a specific creature family in the World of Warcraft
         game.
-        
+
         Requested API:
             /data/wow/creature-family/{creature_family_id}
 
         Args:
             creature_family_id: The ID of the creature family.
-        
+
         Returns:
             A dictionary of the creature family.
 
@@ -56,8 +56,8 @@ class Creature(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_creature_types_index(self, **kwargs: Any) -> Dict:
         """
         This function will return the index of creature types from the API.
@@ -77,19 +77,19 @@ class Creature(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_creature_type(self, creature_type_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves information about a specific creature type in the World of Warcraft
         game.
-        
+
         Requested API:
             /data/wow/creature-type/{creature_type_id}
 
         Args:
             creature_type_id: The ID of the creature type.
-        
+
         Returns:
             A dictionary of the creature type.
 
@@ -108,8 +108,8 @@ class Creature(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_creature(self, creature_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves information about a specific creature in the World of Warcraft game.
@@ -138,8 +138,8 @@ class Creature(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_creature_search(self, **kwargs: Any) -> Dict:
         """
         This function searches for creatures with the given search parameters.
@@ -159,8 +159,8 @@ class Creature(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_creature_display_media(self, creature_display_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves the media for a specific creature display.
@@ -189,8 +189,8 @@ class Creature(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
-    
+        return super().get_api(api=api, query_params=query_params, **kwargs)
+
     def get_creature_family_media(self, creature_family_id: int, **kwargs: Any) -> Dict:
         """
         This function retrieves the media for a specific creature family.
@@ -219,4 +219,4 @@ class Creature(API):
 
         query_params.update(kwargs)
 
-        return super().get_api(api=api, query_params=query_params, kwargs=kwargs)
+        return super().get_api(api=api, query_params=query_params, **kwargs)
