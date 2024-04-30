@@ -105,7 +105,8 @@ class API:
         if query_params is None:
             query_params = {}
 
-        query_params['access_token'] = self.access_token
+        if 'access_token' not in query_params or query_params['access_token'] is None:
+            query_params['access_token'] = self.access_token
 
         if 'locale' not in query_params:
             query_params['locale'] = ''
