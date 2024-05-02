@@ -1,4 +1,5 @@
 import requests, os, importlib, inspect
+from .exceptions import HTTP400Error, HTTP401Error, HTTP403Error, HTTP404Error, HTTP429Error, HTTP500Error, HTTP503Error, HTTP504Error, HTTPUnknownError
 
 class API:
 
@@ -69,11 +70,26 @@ class API:
         :return: The response.json() method will convert the JSON string into a Python dictionary.
         """
 
-        if response.status_code != 200:
-            msg = 'The response code was {0}. Error: {1}'.format(response.status_code, response.text)
-            raise ValueError(msg)
-
-        return response.json()
+        if response.status_code == 400:
+            raise HTTP400Error(response.status_code, response.text)
+        elif response.status_code == 401:
+            raise HTTP401Error(response.status_code, response.text)
+        elif response.status_code == 403:
+            raise HTTP403Error(response.status_code, response.text)
+        elif response.status_code == 404:
+            raise HTTP404Error(response.status_code, response.text)
+        elif response.status_code == 429:
+            raise HTTP429Error(response.status_code, response.text)
+        elif response.status_code == 500:
+            raise HTTP500Error(response.status_code, response.text)
+        elif response.status_code == 503:
+            raise HTTP503Error(response.status_code, response.text)
+        elif response.status_code == 504:
+            raise HTTP504Error(response.status_code, response.text)
+        elif response.status_code != 200:
+            raise HTTPUnknownError(response.status_code, response.text)
+        else:
+            return response.json()
 
     def request_handler(self, url, region, query_params):
 
