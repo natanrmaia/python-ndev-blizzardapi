@@ -1,4 +1,4 @@
-class HTTPException:
+class HTTPException(Exception):
     """
     Represents an exception that occurs during an HTTP request.
 
