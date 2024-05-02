@@ -2,4 +2,4 @@
 from requests.exceptions import *
 
 # Importing the BlizzardAPI class from the blizzard_api.py file.
-from .blizzard_api import BlizzardAPI
+from .blizzard_api  import BlizzardAPI
